@@ -1,1 +1,29 @@
-
+.app{
+    display: flex
+}
+.drawer{
+    background-color: transparent !important ;
+    color: white !important;
+}
+.bgImage{
+    background-image: url(./images/background.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8
+}
+.navLink a{
+    color: white !important;
+}
+.header{
+    color:'white' !important;
+    background-color: transparent !important;
+}
+.material-icons{
+    color: white
+}
+.navLink a:hover{
+    color: blue !important;
+    background-color: white !important;
+}
