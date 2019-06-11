@@ -1,12 +1,14 @@
 .app{
-    display: flex
+    display: flex !important;
+    display: -webkit-flex !important;
 }
 .drawer{
     background-color: transparent !important ;
     color: white !important;
 }
+
 .bgImage{
-    background-image: url(./images/background.jpg);
+    background-image: url(./images/backgroundTechnology.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,14 +18,21 @@
 .navLink a{
     color: white !important;
 }
-.header{
-    color:'white' !important;
-    background-color: transparent !important;
-}
 .material-icons{
     color: white
 }
 .navLink a:hover{
-    color: blue !important;
+    color: black !important;
     background-color: white !important;
+}
+.emojiHello{
+    display: flex !important;
+    display: -webkit-flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+.mdl-layout-title{
+    font-size: 30px !important;
 }

@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="app">
     <Layout className="bgImage" fixedDrawer>
-    <Header className="header" />
         <Drawer className="drawer" title="Portfolio">
             <Navigation className="navLink">
                 <a href="#">Home</a>
@@ -15,8 +14,8 @@ function App() {
                 <a href="#">Contact Me</a>
             </Navigation>
         </Drawer>
-        <Content>
-          <h1>Hello</h1>
+        <Content className="emojiHello">
+          <h1>Hi, I'm Akhil Nayak</h1>
         </Content>
     </Layout>
 </div>
