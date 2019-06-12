@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7b3cbf38.chunk.css",
-    "main.js": "/portfolio/static/js/main.69760738.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.69760738.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.bc1baa1f.chunk.css",
+    "main.js": "/portfolio/static/js/main.440c41b1.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.440c41b1.chunk.js.map",
     "runtime~main.js": "/portfolio/static/js/runtime~main.f308c8e6.js",
     "runtime~main.js.map": "/portfolio/static/js/runtime~main.f308c8e6.js.map",
     "static/css/2.60a6b8e0.chunk.css": "/portfolio/static/css/2.60a6b8e0.chunk.css",
-    "static/js/2.1691381f.chunk.js": "/portfolio/static/js/2.1691381f.chunk.js",
-    "static/js/2.1691381f.chunk.js.map": "/portfolio/static/js/2.1691381f.chunk.js.map",
+    "static/js/2.2ce3ffac.chunk.js": "/portfolio/static/js/2.2ce3ffac.chunk.js",
+    "static/js/2.2ce3ffac.chunk.js.map": "/portfolio/static/js/2.2ce3ffac.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.768814a822be7a42ad58bed3c169855f.js": "/portfolio/precache-manifest.768814a822be7a42ad58bed3c169855f.js",
+    "precache-manifest.1796969d46224668e648105d650c6271.js": "/portfolio/precache-manifest.1796969d46224668e648105d650c6271.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/2.60a6b8e0.chunk.css.map": "/portfolio/static/css/2.60a6b8e0.chunk.css.map",
-    "static/css/main.7b3cbf38.chunk.css.map": "/portfolio/static/css/main.7b3cbf38.chunk.css.map",
-    "static/media/App.css": "/portfolio/static/media/backgroundTechnology.515edad4.jpg"
+    "static/css/main.bc1baa1f.chunk.css.map": "/portfolio/static/css/main.bc1baa1f.chunk.css.map",
+    "static/media/App.css": "/portfolio/static/media/backgroundTechnology.515edad4.jpg",
+    "static/media/goodAfternoon.jpeg": "/portfolio/static/media/goodAfternoon.e444ced7.jpeg",
+    "static/media/goodEvening.jpeg": "/portfolio/static/media/goodEvening.ae1c0a0b.jpeg",
+    "static/media/goodMorning.jpeg": "/portfolio/static/media/goodMorning.be89a9c1.jpeg",
+    "static/media/goodNight.jpeg": "/portfolio/static/media/goodNight.fb889a5d.jpeg",
+    "static/media/meditation.jpeg": "/portfolio/static/media/meditation.b64484c9.jpeg"
   }
 }
