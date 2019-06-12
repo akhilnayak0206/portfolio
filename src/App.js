@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Layout, Drawer, Navigation, Content, Header } from 'react-mdl';
+import { Layout, Drawer, Navigation, Content } from 'react-mdl';
+import MainRouter from './components/MainRouter';
+import {Link} from 'react-router-dom'
 
 function App() {
   return (
@@ -8,14 +10,14 @@ function App() {
     <Layout className="bgImage" fixedDrawer>
         <Drawer className="drawer" title="Portfolio">
             <Navigation className="navLink">
-                <a href="#">Home</a>
-                <a href="#">Projects</a>
-                <a href="#">About Me</a>
-                <a href="#">Contact Me</a>
+                <Link to="/">Home</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/aboutMe">About Me</Link>
+                <Link to="/contactMe">Contact Me</Link>
             </Navigation>
         </Drawer>
         <Content className="emojiHello">
-          <h1>Hi, I'm Akhil Nayak</h1>
+          <MainRouter />
         </Content>
     </Layout>
 </div>
