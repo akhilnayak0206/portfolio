@@ -1,33 +1,34 @@
-.app{
-    display: flex !important;
-    display: -webkit-flex !important;
+.app {
+  display: flex !important;
+  display: -webkit-flex !important;
 }
-.drawer{
-    background-color: transparent !important ;
-    color: white !important;
+.drawer {
+  background-color: transparent !important ;
+  color: white !important;
 }
-.bgImage{
-    background-image: url(./images/backgroundTechnology.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.8
+.bgImage {
+  background-image: url(./images/backgroundTechnology.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
 }
-.navLink a{
-    color: white !important;
+.navLink a {
+  color: white !important;
 }
-.material-icons{
-    color: white
+.material-icons {
+  color: white;
 }
-.navLink a:hover{
-    color: black !important;
-    background-color: white !important;
+.navLink a:hover {
+  color: black !important;
+  background-color: white !important;
 }
-.emojiHello{
-    display: block !important;
-    align-items: center;
+.emojiHello {
+  display: flex !important;
+  display: -webkit-flex !important;
+  margin-top: 2%;
 }
-.mdl-layout-title{
-    font-size: 30px !important;
+.mdl-layout-title {
+  font-size: 30px !important;
 }

@@ -1,0 +1,12 @@
+.cards {
+  display: -webkit-flex !important; /* Safari */
+  -webkit-flex-wrap: wrap !important; /* Safari 6.1+ */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center;
+}
+.singleCard {
+  height: 320px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
