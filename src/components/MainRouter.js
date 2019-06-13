@@ -8,10 +8,10 @@ import Projects from './Projects'
 
 const MainRouter = () => (
     <Switch>
-        <Route exact path="/" component = {HomePage} />
-        <Route exact path="/aboutMe" component = {AboutMe} />
-        <Route exact path="/projects" component = {Projects} />
-        <Route exact path="/contactMe" component = {ContactMe} />
+        <Route exact path="/portfolio/" component = {HomePage} />
+        <Route exact path="/portfolio/aboutMe" component = {AboutMe} />
+        <Route exact path="/portfolio/projects" component = {Projects} />
+        <Route exact path="/portfolio/contactMe" component = {ContactMe} />
     </Switch>
 )
 
