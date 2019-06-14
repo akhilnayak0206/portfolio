@@ -8,7 +8,6 @@ import {
   CardMenu,
   IconButton
 } from "react-mdl";
-import { EmailShareButton } from "react-share";
 import "./componentCSS/Project.css";
 import allProjectFiles from "./AllProjectFiles";
 
