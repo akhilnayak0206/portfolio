@@ -2,9 +2,9 @@ Hello,
 This is my portfolio.
 For this project I have used React,react-bootstrap,React-mdl and cloudinary for image url formation.<br />
 The home page greets the user according to the time of the day.<br />
-The projects contain the available project on github with some description.<br />
-About Me conatins some of the skills that I have learned and when you hover over them  it will show a popup with some description of that skill.<br />
-Contact Me contains my Email, linkedIn and github account.<br />
+The projects contains the available projects on github with some description.<br />
+About Me conatins some of the skills that I have learned and when you hover over them it will show a popup with some description of that skill.<br />
+Contact Me contains my Email, linkedIn and github account. On pressing it will take you directly to mail or my linkedIn or github account.<br />
 <br />
 If you want to make your own portfolio like this website follow the  instruction below:<br />
 1)Clone this project<br />
