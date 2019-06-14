@@ -1,0 +1,13 @@
+.mainSkills {
+  display: block !important;
+}
+.skillsOverlay {
+  justify-content: center !important;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.btnSkills {
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+}

@@ -10,3 +10,13 @@
   margin-left: 10px;
   margin-top: 20px;
 }
+.projectImage {
+  color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mdl-card__title-text {
+  font-size: 34px !important;
+  font-weight: 700 !important;
+}

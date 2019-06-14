@@ -1,40 +1,59 @@
-import React, { Component } from 'react';
-import {Card, CardActions, CardText, CardTitle, Button, CardMenu, IconButton} from 'react-mdl'
-import './componentCSS/Project.css'
+import React, { Component } from "react";
+import {
+  Card,
+  CardActions,
+  CardText,
+  CardTitle,
+  Button,
+  CardMenu,
+  IconButton
+} from "react-mdl";
+import { EmailShareButton } from "react-share";
+import "./componentCSS/Project.css";
+import allProjectFiles from "./AllProjectFiles";
 
 export default class Project extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state=({
-      a: [0,1,2,3,4,5,6,7,8,9]
-    })
+    this.state = {
+      a: allProjectFiles
+    };
   }
+
   render() {
     return (
       <div className="cards">
-
-      { 
-        this.state.a.map((num,key)=>{
-          console.log(num)
-          return(
+        {this.state.a.map((file, key) => {
+          return (
             <Card shadow={0} key={key} className="singleCard">
-    <CardTitle expand style={{color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>Update</CardTitle>
-    <CardText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aenan convallis.
-    </CardText>
-    <CardActions border>
-        <Button colored>View Updates</Button>
-    </CardActions>
-    <CardMenu style={{color: '#fff'}}>
-        <IconButton ripple name="share" onClick ={()=>console.log("pressed")} />
-    </CardMenu>
-</Card>
-          )
-        })
-      }
-
+              <CardTitle
+                expand
+                className="projectImage"
+                style={{ backgroundImage: `url(${file.image})` }}
+              >
+                {file.title}
+              </CardTitle>
+              <CardText>{file.description}</CardText>
+              <CardActions border>
+                <a href={file.code} target="#">
+                  <Button colored>View Code</Button>
+                </a>
+              </CardActions>
+              <CardMenu>
+                <a
+                  href={`mailto:?subject=Hey check this project ${
+                    file.title
+                  }&body=This is a project made by Akhil Nayak. URL:${
+                    file.code
+                  }`}
+                >
+                  <IconButton raised colored ripple name="share" />
+                </a>
+              </CardMenu>
+            </Card>
+          );
+        })}
       </div>
-    )
+    );
   }
 }
