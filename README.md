@@ -1,5 +1,5 @@
 Hello,
-This is my portfolio.<be />
+This is my portfolio.<br />
 For this project I have used React,react-bootstrap,React-mdl and cloudinary for image url formation.<br />
 The home page greets the user according to the time of the day.<br />
 The projects contains the available projects on github with some description.<br />
