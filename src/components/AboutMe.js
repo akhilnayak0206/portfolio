@@ -77,6 +77,44 @@ export default class AboutMe extends Component {
           <OverlayTrigger
             placement="top"
             overlay={
+              <Popover id="popover-positioned-top" title="React Native">
+                <strong>Redux</strong> is a state management for react.
+              </Popover>
+            }
+          >
+            <Button variant="secondary" className="btnSkills">
+              Redux
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement="top"
+            overlay={
+              <Popover id="popover-positioned-top" title="React Native">
+                <strong>react-native-navigation</strong> developed by{" "}
+                <strong>Wix</strong> is used for navigation in react-native.
+              </Popover>
+            }
+          >
+            <Button variant="secondary" className="btnSkills">
+              react-native-navigation
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement="top"
+            overlay={
+              <Popover id="popover-positioned-top" title="React Native">
+                <strong>react-navigation</strong> recommended by{" "}
+                <strong>React</strong> is used for navigation in react-native.
+              </Popover>
+            }
+          >
+            <Button variant="secondary" className="btnSkills">
+              react-navigation
+            </Button>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement="top"
+            overlay={
               <Popover id="popover-positioned-top" title="Expo">
                 <strong>Expo</strong> A free and open source toolchain built
                 around React Native to help you build native iOS and Android
