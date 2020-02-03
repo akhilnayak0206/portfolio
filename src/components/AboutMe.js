@@ -1,144 +1,101 @@
-import React, { Component } from "react";
-import { OverlayTrigger, Popover, Button } from "react-bootstrap";
+import React, { Component } from 'react';
+import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
 
-import "./componentCSS/AboutMe.css";
+import './componentCSS/AboutMe.css';
 
 export default class AboutMe extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      skills: [
+        {
+          title: 'ReactJS',
+          description: 'is a JS library for building User Interface.'
+        },
+        {
+          title: `React Native`,
+          description: `is a framework to build native
+          apps using react.`
+        },
+        {
+          title: `Redux`,
+          description: `is a state management for react.`
+        },
+        {
+          title: `NodeJS`,
+          description: `is a JS runtime environment that executes
+          JS code outside of a browser`
+        },
+        {
+          title: `MongoDB`,
+          description: `is a cross-platform document-oriented database program.`
+        },
+        {
+          title: `Mongoose`,
+          description: `Mongoose is an ORM for Mongo, written in NodeJS.`
+        },
+        {
+          title: `ExpressJS`,
+          description: `is a web application framework for Node.js, released as free and open-source software under the MIT License.`
+        },
+        {
+          title: `ECMAScript`,
+          description: `was created to standardize JavaScript to help foster multiple independent implementations.`
+        },
+        {
+          title: `react-native-navigation`,
+          description: `is used for navigation in react-native.`
+        },
+        {
+          title: `react-navigation`,
+          description: `recommended by React is used for navigation in react-native`
+        },
+        {
+          title: `Expo`,
+          description: `is a free and open source toolchain built
+          around React Native to help you build native iOS and Android
+          apps.`
+        },
+        {
+          title: `Firebase`,
+          description: `provides a real time database and
+          backend as a service.`
+        },
+        {
+          title: `HTML5/CSS3`,
+          description: `are used as markup language and styling respectively`
+        },
+        {
+          title: `JavaScript`,
+          description: `is a lightweight interpreted or
+          just-in-time compiled programming language with first-class
+          functions.`
+        }
+      ]
+    };
+  }
+
   render() {
     return (
-      <div className="mainSkills">
-        <h1>Skills</h1>
-        <div className="skillsOverlay">
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="HTML/CSS">
-                <strong>HTML/CSS</strong> is the basic script needed for Web
-                Development.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              HTML/CSS
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="Bootstrap">
-                <strong>Bootstrap</strong> is a FrontEnd Component library.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              Bootstrap
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="JavaScript">
-                <strong>JavaScript</strong> is a lightweight interpreted or
-                just-in-time compiled programming language with first-class
-                functions.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              JavaScript
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="ReactJS">
-                <strong>ReactJS</strong> is a JS library for building User
-                Interface.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              ReactJS
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="React Native">
-                <strong>React Native</strong> is a framework to build native
-                apps using react.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              React Native
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="React Native">
-                <strong>Redux</strong> is a state management for react.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              Redux
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="React Native">
-                <strong>react-native-navigation</strong> developed by{" "}
-                <strong>Wix</strong> is used for navigation in react-native.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              react-native-navigation
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="React Native">
-                <strong>react-navigation</strong> recommended by{" "}
-                <strong>React</strong> is used for navigation in react-native.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              react-navigation
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="Expo">
-                <strong>Expo</strong> A free and open source toolchain built
-                around React Native to help you build native iOS and Android
-                apps.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              Expo
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger
-            placement="top"
-            overlay={
-              <Popover id="popover-positioned-top" title="Firebase">
-                <strong>Firebase</strong> provides a real time database and
-                backend as a service.
-              </Popover>
-            }
-          >
-            <Button variant="secondary" className="btnSkills">
-              Firebase
-            </Button>
-          </OverlayTrigger>
+      <div className='mainSkills'>
+        <h1 style={{ backgroundColor: ' rgba(255, 255, 255, 0.2)' }}>Skills</h1>
+        <div className='skillsOverlay'>
+          {this.state.skills &&
+            this.state.skills.map((val, key) => (
+              <OverlayTrigger
+                key={key}
+                placement='top'
+                overlay={
+                  <Popover id='popover-positioned-top' title={val.title}>
+                    <strong>{val.title}</strong> {val.description}
+                  </Popover>
+                }
+              >
+                <Button variant='secondary' className='btnSkills'>
+                  {val.title}
+                </Button>
+              </OverlayTrigger>
+            ))}
         </div>
       </div>
     );

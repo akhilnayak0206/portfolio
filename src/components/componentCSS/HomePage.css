@@ -1,14 +1,18 @@
-.emojiHello{
-    display: block !important;
-    justify-content: center;
-    text-align: center;
-    color: black;   
+.emojiHello {
+  display: block !important;
+  justify-content: center;
+  text-align: center;
+  color: black;
 }
 img {
-    width: 30%;
-    height: 30%;
-    border-radius: 50% ;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
 }
-.profession{
-    font-weight: 800;
+.profession {
+  font-weight: 800;
+}
+.resume {
+  background-color: gray !important;
+  color: white !important;
 }

@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import "./componentCSS/HomePage.css";
-import meditation from "./imagesEmoji/meditation.jpeg";
-import morning from "./imagesEmoji/goodMorning.jpeg";
-import afternoon from "./imagesEmoji/goodAfternoon.jpeg";
-import evening from "./imagesEmoji/goodEvening.jpeg";
-import night from "./imagesEmoji/goodNight.jpeg";
+import React, { Component } from 'react';
+import './componentCSS/HomePage.css';
+import meditation from './imagesEmoji/meditation.jpeg';
+import morning from './imagesEmoji/goodMorning.jpeg';
+import afternoon from './imagesEmoji/goodAfternoon.jpeg';
+import evening from './imagesEmoji/goodEvening.jpeg';
+import night from './imagesEmoji/goodNight.jpeg';
+import { Button } from 'react-mdl';
 
 export default class HomePage extends Component {
   componentWillMount() {
@@ -44,10 +45,18 @@ export default class HomePage extends Component {
   }
   render() {
     return (
-      <div className="emojiHello">
-        <img src={this.state.emojiImage} alt="Akhil Nayak" />
+      <div className='emojiHello'>
+        <img src={this.state.emojiImage} alt='Akhil Nayak' />
         <h1>Hi, I'm Akhil Nayak </h1>
-        <h1 className="profession">Front-End Developer</h1>
+        <a
+          href='/resume/Akhil_Nayak_Resume.docx'
+          target='_blank'
+          download='Akhil_Nayak_Resume.docx'
+        >
+          <Button className='resume'>
+            <i className='fas fa-file-download' /> Resume
+          </Button>
+        </a>
       </div>
     );
   }

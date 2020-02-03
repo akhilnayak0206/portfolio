@@ -12,7 +12,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  background-color: black;
 }
 .navLink a {
   color: white !important;

@@ -1,22 +1,71 @@
-.cards {
-  display: -webkit-flex !important; /* Safari */
-  -webkit-flex-wrap: wrap !important; /* Safari 6.1+ */
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center;
-}
 .singleCard {
-  height: 320px;
+  /* height: 320px; */
   margin-left: 10px;
   margin-top: 20px;
-}
-.projectImage {
-  color: black;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white !important;
 }
 .mdl-card__title-text {
   font-size: 34px !important;
   font-weight: 700 !important;
+}
+.mdl-card__title {
+  padding-bottom: 0px !important;
+}
+
+.css-6d2p78 {
+  border-radius: 0%;
+  width: auto;
+}
+
+.css-h67k8 {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.css-1h82jk3 {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.css-xfk84m {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.cardTitleText {
+  background-color: rgba(0, 0, 0, 0.5);
+  flex: 100%;
+}
+
+.cardTitleMain {
+  color: white !important;
+  display: flex;
+}
+
+.ssButton {
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  margin-right: 1% !important;
+}
+
+.vcButton {
+  margin-left: 1% !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+@media only screen and (max-width: 450px) {
+  .cards {
+    display: -webkit-flex !important; /* Safari */
+    -webkit-flex-wrap: wrap !important; /* Safari 6.1+ */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    margin-top: 5%;
+  }
+}
+@media only screen and (min-width: 451px) {
+  .cards {
+    display: -webkit-flex !important; /* Safari */
+    -webkit-flex-wrap: wrap !important; /* Safari 6.1+ */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
 }

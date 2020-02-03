@@ -1,58 +1,112 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from 'react';
 import {
   Card,
   CardActions,
-  CardText,
   CardTitle,
   Button,
   CardMenu,
-  IconButton
-} from "react-mdl";
-import "./componentCSS/Project.css";
-import allProjectFiles from "./AllProjectFiles";
+  IconButton,
+  Tooltip
+} from 'react-mdl';
+import './componentCSS/Project.css';
+import allProjectFiles from './AllProjectFiles';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 
 export default class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      a: allProjectFiles
+      a: allProjectFiles,
+      openModal: false,
+      selectedImages: []
     };
   }
 
+  toggleModal = val => {
+    this.setState(prevState => ({
+      openModal: !prevState.openModal,
+      selectedImages: val
+    }));
+  };
+
   render() {
     return (
-      <div className="cards">
-        {this.state.a.map((file, key) => {
-          return (
-            <Card shadow={0} key={key} className="singleCard">
-              <CardTitle
-                expand
-                className="projectImage"
-                style={{ backgroundImage: `url(${file.image})` }}
+      <Fragment>
+        <ModalGateway>
+          {this.state.openModal ? (
+            <Modal onClose={this.toggleModal}>
+              <Carousel
+                frameProps={{ autoSize: 'height' }}
+                views={this.state.selectedImages}
+                styles={{
+                  container: base => ({
+                    ...base,
+                    height: '100vh'
+                  }),
+                  view: base => ({
+                    ...base,
+                    alignItems: 'center',
+                    display: 'flex ',
+                    height: '100vh',
+                    justifyContent: 'center',
+                    borderRadius: '0%'
+                  })
+                }}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+        <div className='cards'>
+          {this.state.a.map((file, key) => {
+            return (
+              <Card
+                shadow={0}
+                key={key}
+                className='singleCard'
+                style={{
+                  background: `url(${file.image}) center top/contain no-repeat`
+                }}
               >
-                {file.title}
-              </CardTitle>
-              <CardText>{file.description}</CardText>
-              <CardActions border>
-                <a href={file.code} target="#">
-                  <Button colored>View Code</Button>
-                </a>
-              </CardActions>
-              <CardMenu>
-                <a
-                  href={`mailto:?subject=Hey check this project ${
-                    file.title
-                  }&body=This is a project made by Akhil Nayak. URL:${
-                    file.code
-                  }`}
-                >
-                  <IconButton raised colored ripple name="share" />
-                </a>
-              </CardMenu>
-            </Card>
-          );
-        })}
-      </div>
+                <CardTitle expand className='cardTitleMain'>
+                  <h3 className='cardTitleText'>{file.title}</h3>
+                </CardTitle>
+                <CardActions border style={{ backgroundColor: 'gray' }}>
+                  <Button
+                    className='ssButton'
+                    onClick={() => this.toggleModal(file.imgArray)}
+                  >
+                    ScreenShots
+                  </Button>
+                  <Button className='vcButton'>
+                    <a
+                      href={file.code}
+                      target='codeGithub'
+                      style={{ color: 'white' }}
+                    >
+                      {' '}
+                      View Code
+                    </a>
+                  </Button>
+                </CardActions>
+                <CardMenu>
+                  <Tooltip label='Share'>
+                    <a
+                      href={`mailto:?subject=Hey check this project ${file.title}&body=This is a project made by Akhil Nayak. URL:${file.code}`}
+                    >
+                      <IconButton
+                        raised
+                        style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+                        ripple
+                        name='share'
+                      />
+                    </a>
+                  </Tooltip>
+                </CardMenu>
+              </Card>
+            );
+          })}
+        </div>
+      </Fragment>
     );
   }
 }
