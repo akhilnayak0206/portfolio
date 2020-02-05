@@ -49,7 +49,7 @@ export default class HomePage extends Component {
         <img src={this.state.emojiImage} alt='Akhil Nayak' />
         <h1>Hi, I'm Akhil Nayak </h1>
         <a
-          href='https://drive.google.com/file/d/1BpPEzpuBa5fVwKrCTNlkbhYJE7I0yZz7/view?usp=drivesdk'
+          href='https://drive.google.com/file/d/1CdYLmIKS8OGQfYTNwdYvciI05pjG6xb_/view?usp=drivesdk'
           target='_blank'
         >
           <Button className='resume'>View Resume</Button>
