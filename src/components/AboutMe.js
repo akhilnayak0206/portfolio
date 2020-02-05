@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
 
 import './componentCSS/AboutMe.css';
+import Typist from 'react-typist';
 
 export default class AboutMe extends Component {
   constructor(props) {
@@ -78,7 +79,14 @@ export default class AboutMe extends Component {
   render() {
     return (
       <div className='mainSkills'>
-        <h1 style={{ backgroundColor: ' rgba(255, 255, 255, 0.2)' }}>Skills</h1>
+        <h1
+          style={{
+            backgroundColor: ' rgba(255, 255, 255, 0.2)',
+            fontFamily: '"Brush Script MT", cursive'
+          }}
+        >
+          <Typist cursor={{ show: false }}>Skills</Typist>
+        </h1>
         <div className='skillsOverlay'>
           {this.state.skills &&
             this.state.skills.map((val, key) => (
@@ -86,7 +94,11 @@ export default class AboutMe extends Component {
                 key={key}
                 placement='top'
                 overlay={
-                  <Popover id='popover-positioned-top' title={val.title}>
+                  <Popover
+                    id='popover-positioned-top'
+                    title={val.title}
+                    className='skillsInfo'
+                  >
                     <strong>{val.title}</strong> {val.description}
                   </Popover>
                 }

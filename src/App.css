@@ -5,6 +5,9 @@
 .drawer {
   background-color: transparent !important ;
   color: white !important;
+  font-family: 'Lucida Sans Typewriter', 'Lucida Console', monaco,
+    'Bitstream Vera Sans Mono', monospace !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 .bgImage {
   background-image: url(./images/backgroundTechnology.jpg);
@@ -32,4 +35,5 @@
 }
 .mdl-layout-title {
   font-size: 30px !important;
+  font-family: Impact, Haettenschweiler !important;
 }

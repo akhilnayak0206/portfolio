@@ -3,12 +3,15 @@ import { Tooltip } from 'react-mdl';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 import './componentCSS/ContactMe.css';
+import Typist from 'react-typist';
 
 export default class ContactMe extends Component {
   render() {
     return (
       <div>
-        <h1 className='textH1'>You can reach me at</h1>
+        <h1 className='textH1'>
+          <Typist cursor={{ show: false }}>You can reach me at</Typist>
+        </h1>
         <a href={`mailto:akhilnayak0206@gmail.com`}>
           <Tooltip label='Mail Me!' position='bottom'>
             <SvgIcon className='mailIcon'>

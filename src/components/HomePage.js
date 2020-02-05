@@ -6,8 +6,17 @@ import afternoon from './imagesEmoji/goodAfternoon.jpeg';
 import evening from './imagesEmoji/goodEvening.jpeg';
 import night from './imagesEmoji/goodNight.jpeg';
 import { Button } from 'react-mdl';
+import Typist from 'react-typist';
 
 export default class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTime: 25,
+      emojiImage: meditation
+    };
+  }
+
   componentWillMount() {
     this.setState({
       currentTime: new Date().getHours()
@@ -36,21 +45,18 @@ export default class HomePage extends Component {
       });
     }
   }
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentTime: 25,
-      emojiImage: meditation
-    };
-  }
+
   render() {
     return (
       <div className='emojiHello'>
         <img src={this.state.emojiImage} alt='Akhil Nayak' />
-        <h1>Hi, I'm Akhil Nayak </h1>
+        <h1 className='intro'>
+          <Typist cursor={{ hideWhenDone: true }}>Hi, I'm Akhil Nayak</Typist>
+        </h1>
         <a
           href='https://drive.google.com/file/d/1CdYLmIKS8OGQfYTNwdYvciI05pjG6xb_/view?usp=drivesdk'
           target='_blank'
+          rel='noopener noreferrer'
         >
           <Button className='resume'>View Resume</Button>
         </a>

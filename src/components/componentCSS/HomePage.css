@@ -15,4 +15,9 @@ img {
 .resume {
   background-color: gray !important;
   color: white !important;
+  font-family: 'Brush Script MT', cursive !important;
+}
+.intro {
+  font-family: 'Brush Script MT', cursive !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
 }

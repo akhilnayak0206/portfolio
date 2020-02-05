@@ -13,7 +13,7 @@ function App() {
             <Navigation className='navLink'>
               <Link to='/'>Home</Link>
               <Link to='/projects'>Projects</Link>
-              <Link to='/aboutMe'>About Me</Link>
+              <Link to='/aboutMe'>Skills</Link>
               <Link to='/contactMe'>Contact Me</Link>
             </Navigation>
           </Drawer>

@@ -6,8 +6,12 @@
   margin-left: 10px;
   margin-top: 20px;
 }
+.skillsInfo {
+  font-family: Lucida Sans Typewriter !important;
+}
 .btnSkills {
   border-radius: 50px;
   margin-left: 10px;
   margin-top: 10px;
+  font-family: Lucida Sans Typewriter !important;
 }
