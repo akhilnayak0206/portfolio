@@ -641,7 +641,7 @@ const allProjectFiles = [
   },
   {
     id: 'url-shorten-website',
-    title: 'URL shorten Website',
+    title: 'URL Shorten Website',
     image:
       'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1580730496/URL-shortened/web/homepage.png',
     description:
@@ -693,6 +693,24 @@ const allProjectFiles = [
       {
         src:
           'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1560496699/airbnb-clone_ss.png',
+      },
+    ],
+  },
+  {
+    id: 'sketch-on-image',
+    title: 'Sketch-on-Image',
+    image:
+      'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588423741/sketch%20on%20image/screely-1588423725696.png',
+    description: 'This is a website where you can sketch on image',
+    code: 'https://github.com/akhilnayak0206/sketch-on-image/',
+    imgArray: [
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588423740/sketch%20on%20image/screely-1588423507548.png',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588423741/sketch%20on%20image/screely-1588423725696.png',
       },
     ],
   },
