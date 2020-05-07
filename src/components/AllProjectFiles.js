@@ -640,6 +640,40 @@ const allProjectFiles = [
     ],
   },
   {
+    id: 'twitter-dashboard',
+    title: 'Twitter Dashboard',
+    image:
+      'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.07.06_AM.jpg',
+    description: 'This is a website where you can use twitter features',
+    code: 'https://github.com/akhilnayak0206/twitter-dashboard',
+    imgArray: [
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.07.06_AM.jpg',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.10.02_AM.jpg',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.12.37_AM.jpg',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.16.34_AM.jpg',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.17.12_AM.jpg',
+      },
+      {
+        src:
+          'https://res.cloudinary.com/dx0wpoeyu/image/upload/v1588647597/twitter-dashboard/WhatsApp_Image_2020-05-05_at_8.17.33_AM.jpg',
+      },
+    ],
+  },
+  {
     id: 'url-shorten-website',
     title: 'URL Shorten Website',
     image:
