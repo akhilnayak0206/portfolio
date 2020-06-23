@@ -30,7 +30,7 @@ npm start
 ## Reproduce the project
 
 1. git clone or download the project.
-2. You can change the background-image by changing the `.bgImage` in `App.css`
+2. You can change the background-image by changing the `.bgImage` with a new url in `App.css`
 3. Change the name in HomePage.js and add your link to the resume in the `View Resume` button.
 4. You can change the image above the name by adding the images in `src>components>imagesEmoji`
 5. Enter your projects in `src>components>AllProjectFiles.js`. The format for the same is given in the file.
