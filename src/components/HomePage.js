@@ -23,7 +23,7 @@ export default class HomePage extends Component {
     });
   }
   componentDidMount() {
-    if (this.state.currentTime >= 5 && this.state.currentTime < 12) {
+    if (this.state.currentTime >= 0 && this.state.currentTime < 12) {
       this.setState({
         emojiImage: morning
       });
@@ -31,19 +31,11 @@ export default class HomePage extends Component {
       this.setState({
         emojiImage: afternoon
       });
-    } else if (this.state.currentTime > 16 && this.state.currentTime < 20) {
+    } else if (this.state.currentTime > 16 && this.state.currentTime < 25) {
       this.setState({
         emojiImage: evening
       });
-    } else if (this.state.currentTime > 19 && this.state.currentTime < 25) {
-      this.setState({
-        emojiImage: night
-      });
-    } else if (this.state.currentTime >= 0 && this.state.currentTime < 5) {
-      this.setState({
-        emojiImage: night
-      });
-    }
+    } 
   }
 
   render() {
