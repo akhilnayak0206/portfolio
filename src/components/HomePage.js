@@ -5,7 +5,7 @@ import morning from './imagesEmoji/goodMorning.jpeg';
 import afternoon from './imagesEmoji/goodAfternoon.jpeg';
 import evening from './imagesEmoji/goodEvening.jpeg';
 import night from './imagesEmoji/goodNight.jpeg';
-import { Button } from 'react-mdl';
+// import { Button } from 'react-mdl'; 
 import Typist from 'react-typist';
 
 export default class HomePage extends Component {
@@ -53,13 +53,13 @@ export default class HomePage extends Component {
         <h1 className='intro'>
           <Typist cursor={{ hideWhenDone: true }}>Hi, I'm Akhil Nayak</Typist>
         </h1>
-        <a
+        {/* <a
           href='https://drive.google.com/file/d/1CdYLmIKS8OGQfYTNwdYvciI05pjG6xb_/view?usp=drivesdk'
           target='_blank'
           rel='noopener noreferrer'
         >
           <Button className='resume'>View Resume</Button>
-        </a>
+        </a> */}
       </div>
     );
   }

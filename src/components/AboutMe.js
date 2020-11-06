@@ -36,6 +36,10 @@ export default class AboutMe extends Component {
           description: `is an ORM for Mongo, written in NodeJS.`,
         },
         {
+          title: `Sequelize`,
+          description: `is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server.`,
+        },
+        {
           title: `ExpressJS`,
           description: `is a web application framework for Node.js, released as free and open-source software under the MIT License.`,
         },
@@ -87,12 +91,7 @@ export default class AboutMe extends Component {
   render() {
     return (
       <div className='mainSkills'>
-        <h1
-          style={{
-            backgroundColor: ' rgba(255, 255, 255, 0.2)',
-            fontFamily: '"Brush Script MT", cursive',
-          }}
-        >
+        <h1 className='textH1'>
           <Typist cursor={{ show: false }}>Skills</Typist>
         </h1>
         <div className='skillsOverlay'>
