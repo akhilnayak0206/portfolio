@@ -1,53 +1,34 @@
-# Portfolio Website
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This is a website to show your portfolio.  
-This is a **React** project hosted with the help of **Git**.
+## Getting Started
 
-## Quick Start
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Run the project
-npm start
+npm run dev
+# or
+yarn dev
 ```
 
-## Packages Installed
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### These are the list of packages used in
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-- react
-- react-router-dom
-- react-mdl
-- redux-images
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-**react** is a JavaScript library for building user interfaces.  
-**react-router-dom** is used for routing.  
-**react-mdl** is used for as frontend components.  
-**react-images** is used for the carousels.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Reproduce the project
+## Learn More
 
-1. git clone or download the project.
-2. You can change the background-image by changing the `.bgImage` with a new url in `App.css`
-3. Change the name in HomePage.js and add your link to the resume in the `View Resume` button.
-4. You can change the image above the name by adding the images in `src>components>imagesEmoji`
-5. Enter your projects in `src>components>AllProjectFiles.js`. The format for the same is given in the file.
-6. To enter your skills edit in `src>components>AboutMe.js`. Add title and description in state.
-7. Change the link in `src>components>ContactMe.js` page to your own links.
-8. To host the site edit homepage in `package.json` to the url received from github then run: `npm run predeploy && npm run deploy`
+To learn more about Next.js, take a look at the following resources:
 
-## Project Info
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Author
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-> Akhil Nayak
+## Deploy on Vercel
 
-### License
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-> This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
-
-#### If you have any suggestion or doubt do let me know
-
-#### ThankYou.Peace
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
