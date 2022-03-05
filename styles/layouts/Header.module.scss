@@ -1,0 +1,10 @@
+@import '../main.scss';
+
+.header {
+  width: 100vw;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background-color: $color-background;
+}

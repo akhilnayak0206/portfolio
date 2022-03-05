@@ -1,0 +1,41 @@
+.container {
+  margin: 0px auto;
+  padding: 0px 30px;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-top {
+  margin-top: 8rem;
+}
+
+.u-margin-bottom-huge {
+  margin-top: 10rem;
+}
