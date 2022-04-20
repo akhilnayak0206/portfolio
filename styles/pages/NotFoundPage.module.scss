@@ -1,0 +1,44 @@
+@import "../main.scss";
+
+.notFoundPage {
+  
+    .notFoundDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 700px;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        @include respond (phone){
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .errorImage{
+            display: block;
+            position: relative;
+            width: 100%;
+        }
+
+        h1{
+            color: $color-primary;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        h2,a{
+            color: $color-primary;
+            text-align: center;
+            text-decoration: none;
+            transition: all 1s;
+        }
+
+        h2:hover, a:hover{
+            color: $color-primary-dark;
+            transform: scale(1.2);
+        }
+    }
+}
+ 
