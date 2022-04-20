@@ -1,8 +1,9 @@
-$color-primary: #55c57a;
+$color-primary: #72f387;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
 $color-background: #2d2e32;
+$color-background-dark: #1c1d1f;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
@@ -10,9 +11,11 @@ $color-grey-light-2: #eee;
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
+$color-grey-dark-5-opacity: rgb(128, 128, 128, 0.5);
 
 $color-white: #fff;
 $color-black: #000;
+$color-red: red;
 
 // GRID
 $grid-width: 114rem;
@@ -22,3 +25,5 @@ $gutter-horizontal: 6rem;
 
 // FONT-SIZE
 $default-font-size: 1.6rem;
+
+$font-size-big: 3rem;

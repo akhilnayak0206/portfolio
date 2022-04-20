@@ -1,0 +1,236 @@
+@import "../main.scss";
+
+.footer {
+  display: flex;
+  background-color: $color-background-dark;
+
+  .footerContent {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .footerRowSection {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 100px;
+
+      .leftDiv {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          margin-top: 0;
+          font-size: 2.5rem;
+          font-weight: 200;
+          line-height: 3rem;
+
+          @include respond(tab-port) {
+            margin-bottom: 3rem;
+          }
+        }
+
+        .logoFooter {
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline;
+          height: 100% !important;
+          margin-left: 0;
+
+          a {
+            flex-grow: 0;
+            color: $color-grey-dark-2;
+            font-weight: 100;
+          }
+
+          @include respond(tab-port) {
+            span > a {
+              display: none;
+            }
+            span > span {
+              margin-left: 0px;
+            }
+          }
+        }
+
+        span.rightsReserved {
+          margin-left: 50px;
+          font-size: 1rem;
+          font-weight: 100;
+          color: $color-grey-dark-2;
+        }
+
+        .sayingHiFooter {
+          border-bottom: 2px solid $color-primary;
+          color: $color-primary;
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $color-primary;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+          
+          &:hover:after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+
+        //  left-div mobile
+        @include respond(tab-port) {
+          width: 100%;
+        }
+      }
+
+      .rightDiv {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        span.info {
+          color: $color-grey-dark-2;
+          font-size: 1rem;
+        }
+
+        span.address {
+          color: $color-grey-dark-2;
+          font-size: 1.5rem;
+        }
+
+        span.emailAddress {
+          color: white;
+          font-size: 2rem;
+        }
+
+        @include respond(tab-port) {
+        }
+
+        nav {
+          display: flex;
+          margin-right: 10px;
+          flex-direction: column;
+
+          a.active::before {
+            content: "<  ";
+          }
+
+          a.active {
+            color: $color-primary;
+            margin-left: -15px;
+          }
+
+          a.active::after {
+            content: "  >";
+          }
+
+          span:not(:first-child) {
+            margin-top: 25px;
+          }
+        }
+
+        nav.contactDiv {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          width: 100%;
+          height: 100%;
+          align-items: baseline;
+          margin-right: 0px;
+
+          span {
+            width: 100%;
+            a {
+              color: $color-grey-dark-2;
+              width: 100%;
+              display: flex;
+              align-items: baseline;
+              justify-content: flex-start;
+              cursor: pointer;
+
+              @include respond(phone){
+              font-size: 1.5rem;
+              }
+            }
+            img {
+              width: 1.5rem !important;
+              min-width: 1.5rem !important;
+            }
+          }
+
+          span:last-child {
+            align-self: center;
+            a {
+              justify-content: flex-end;
+            }
+
+            @include respond(phone){
+              align-self: baseline;
+            }
+          }
+        }
+
+        // right div mobile
+        @include respond(tab-port) {
+          margin-left: 0;
+          width: 100%;
+
+          span.info + br,
+          span.address + br,
+          span.emailAddress + br {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      // row section
+      @include respond(tab-port) {
+        flex-direction: column;
+        padding-bottom: 2rem;
+      }
+    }
+
+    div.footerRowSection:last-child {
+      padding-bottom: 0px;
+
+      @include respond(tab-port) {
+        .leftDiv {
+          order: 2;
+          padding-top: 2rem;
+        }
+
+        .rightDiv {
+          order: 1;
+          width: 70%;
+
+          @include respond(phone){
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    @include respond(tab-land) {
+      height: 100%;
+      padding-bottom: 50px;
+    }
+  }
+}

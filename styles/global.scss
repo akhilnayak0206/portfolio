@@ -12,6 +12,7 @@ body {
   box-sizing: border-box;
   overflow-y: overlay;
   overflow-x: hidden;
+  // cursor: none;
 }
 
 *,
@@ -20,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  white-space: pre-line;
 }
 
 html {
@@ -30,25 +32,29 @@ html {
   //   font-size: 50%;
   // }
 
-  // // phone
-  // @include respond(phone) {
-  //   font-size: 50%;
-  // }
-  // tab landscape
-  @include respond(tab-land) {
-    font-size: 100%; //1rem = 9px, 9/16*100
+  // big-desktop
+  @include respond(big-desktop) {
+    font-size: 100%;
   }
   // tab port and phone
   @include respond(tab-port) {
     font-size: 100%;
   }
-  // big-desktop
-  @include respond(big-desktop) {
-    font-size: 100%;
+  // tab landscape
+  @include respond(tab-land) {
+    font-size: 100%; //1rem = 9px, 9/16*100
+  }
+  // phone
+  @include respond(phone) {
+    font-size: 75%;
   }
 }
 
 ::selection {
   background-color: $color-primary;
   color: $color-white;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
