@@ -6,7 +6,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 import axios from "axios";
 import defaultData from "../../defaultData.json";
 import apiAppendData from 'utils/apiAppendData';
-import { SECRET_API_URL } from "../config/index";
+import { SECRET_API_URL } from "../../config/index";
 
 export default function ProjectsPage({ headerFooterData, projects }) {
   const [projectItems, setProjectItems] = useState(projects);
