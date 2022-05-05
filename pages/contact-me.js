@@ -13,6 +13,7 @@ import { ChatMeContext } from '../components/Context';
 import axios from "axios";
 import defaultData from '../defaultData.json'
 import apiAppendData from 'utils/apiAppendData';
+import { SECRET_API_URL } from "../config/index";
 
 export default function ContactMePage({ headerFooterData, contactPageData }) {
   const [openPopup, setOpenPopup] = useContext(ChatMeContext);
@@ -180,7 +181,7 @@ export async function getStaticProps() {
     // const resContactPage = await axios.get(`/contact-page`);
     // const contactPageData = resContactPage.data;
 
-    axios.get("/");
+    axios.get(SECRET_API_URL);
     
     return {
       props: { 

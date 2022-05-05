@@ -6,6 +6,7 @@ import defaultData from '../defaultData.json'
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import apiAppendData from 'utils/apiAppendData';
+import { SECRET_API_URL } from "../config/index";
 
 export default function SkillsPage({ headerFooterData, skills }) {
   const [skillItems, setSkillItems] = useState(skills);
@@ -94,7 +95,7 @@ export async function getStaticProps() {
     // const resSkills = await axios.get(`/skills?_sort=position`);
     // const skills = resSkills.data;
 
-    axios.get("/")
+    axios.get(SECRET_API_URL)
 
     return {
       props: { 
