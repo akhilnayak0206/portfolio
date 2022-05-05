@@ -3,7 +3,11 @@
 .homepage {
   .firstSection {
     display: flex;
-    min-height: 700px;
+    min-height: 550px;
+
+    @include respond (big-laptop) {
+      min-height: 700px;
+    }
 
     @include respond (tab-port){
       flex-direction: column-reverse;
@@ -84,7 +88,7 @@
           }
             
             &:hover{
-              transform: translateY(-10px);
+              transform: translateY(-1px);
               // color: $color-white;
               // text-shadow: 1px 1px $color-grey-dark;
 
@@ -241,7 +245,7 @@
       .system_nodeJS {
         z-index: 3;
         position: absolute;
-        top: 26.5em;
+        top: 20.5em;
         left: -10em;
         width: 2.5em;
         height: 2.5em;
@@ -250,6 +254,10 @@
 
         @include respond (tab-port){
           display: none;
+        }
+
+        @include respond (big-laptop) {
+          top: 26em;
         }
       }
     }
@@ -264,8 +272,12 @@
       display: flex;
       min-height: 700px;
       width: 100%;
-      padding-top: 150px;
+      padding-top: 125px;
       // padding-bottom: 150px;
+
+      @include respond (big-laptop) {
+        padding-top: 150px;
+      }
 
       @include respond (tab-port){
         flex-direction: column-reverse;
@@ -305,7 +317,7 @@
 
             h1 {
               font-weight: 400;
-              font-size: xx-large;
+              font-size: $default-font-size;
             }
 
             // img.svgIcon {
@@ -341,6 +353,10 @@
       div.bothSection:last-of-type {
         padding: 0 7rem;
 
+        @include respond (tab-land){
+          padding: 0 3rem;
+        }
+
         @include respond (tab-port){
           padding: 0;
         }
@@ -370,8 +386,12 @@
     min-height: 600px;
     background-color: $color-background-dark;
     padding-top: 100px;
-    padding-bottom: 150px;
+    padding-bottom: 125px;
     flex-direction: column;
+
+    @include respond (big-laptop) {
+      padding-top: 150px;
+    }
 
     @include respond (tab-port){
       padding-bottom: 50px;
@@ -466,9 +486,12 @@
   .fourthSection {
     display: flex;
     min-height: 700px;
-    padding-top: 150px;
     flex-direction: column;
-    padding: 150px 7rem;
+    padding: 100px 7rem;
+
+    @include respond (big-laptop) {
+      padding: 150px 7rem;
+    }
 
     @include respond (tab-port){
       padding: 3rem;
@@ -537,7 +560,7 @@
 
       h2:first-of-type {
         font-weight: 400;
-        font-size: x-large;
+        font-size: $default-font-size;
         color: $color-grey-dark-2;
 
         a{

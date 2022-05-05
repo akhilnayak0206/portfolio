@@ -22,6 +22,7 @@ function Header({headerFooterData}) {
   };
   
   useEffect(() => {
+    // specific page show header background color logic
     // if(router.pathname == "/contact-me"){
     //   setHeaderClass(`${styles.header} ${styles.headerScrolled}`);
     // }

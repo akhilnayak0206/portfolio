@@ -8,15 +8,21 @@ import InstagramIcon from "../public/instagram-icon.svg";
 import GithubIcon from "../public/github-icon.svg";
 import StackOverflowIcon from "../public/stackoverflow-icon.svg";
 import emailIcon from "../public/email-icon.svg";
-import { LoaderContext, ChatMeContext } from '../components/Context';
+import mumbaiPic from "../public/mumbai.png";
+import { ChatMeContext } from '../components/Context';
 import axios from "axios";
 import defaultData from '../defaultData.json'
+import apiAppendData from 'utils/apiAppendData';
 
 export default function ContactMePage({ headerFooterData, contactPageData }) {
   const [openPopup, setOpenPopup] = useContext(ChatMeContext);
 
+  const [headFootData, setHeadFootData] = useState(headerFooterData)
+  const [contactPage, setContactPage] = useState(contactPageData)
+
+
   const { animation, animationTextP1, animationTextP3, 
-    developerType, mapImage, pageDescription, pageTitle, seoKeyword} = contactPageData || {};
+    developerType, mapImage, pageDescription, pageTitle, seoKeyword} = contactPage || {};
 
     const { linkedInUrl, githubUrl, myEmail, 
       instagramUrl, stackoverflowUrl, twitterUrl } = headerFooterData || {};
@@ -37,21 +43,52 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
     
   
     return () => {
-      clearInterval(developerTitleInterval)
+      clearInterval(developerTitleInterval);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
+  // get data from API after waking the Heroku Dyno
+  useEffect(() => {
+    let callInitialData = async() =>{
+      try {
+        let headers = {};
+        // let data = await apiAppendData();
+        // headers['fullInfoFromApi'] = JSON.stringify(data);
+        // headers['location'] = JSON.stringify(data.ipAndLocationData);
+        // headers['browser'] = data.browser;
+
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
+
+        const resContactPage = await axios.get(`/contact-page`,{headers});
+        const contactPageAPICall = resContactPage.data;
+    
+        setHeadFootData(headerFooterData);
+        setContactPage(contactPageAPICall);
+      }
+      catch(error){
+        console.log(error,"error");
+      }
+    }
+
+    callInitialData();
+  }, [])
 
   return (
-    <Layout title={pageTitle} description={pageDescription} keywords={seoKeyword} headerFooterData={headerFooterData}>
+    <Layout title={pageTitle} description={pageDescription} keywords={seoKeyword} headerFooterData={headFootData}>
       <div className={styles.skillsPage}>
         <main>
             <div className={`${styles.container} ${styles.mainContactsDiv}`}>
                 <div className={styles.leftContent}>
                   <div>
                     <Image 
-                      src={mapImage.url}
+                      src={mapImage.url || mumbaiPic}
                       // src={mapImage?.formats?.large?.url || mapImage.url}
                       // src={contactPhoto}
                       // layout="fill"
@@ -131,20 +168,25 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
 
 export async function getStaticProps() {
   try {
-    const resHeaderFooter = await axios.get(`/header-footer`);
-    let headerFooterData = resHeaderFooter.data;
+    // const resHeaderFooter = await axios.get(`/header-footer`);
+    // let headerFooterData = resHeaderFooter.data;
 
-    const { updated_at, created_at, published_at, id, defaultPageTitle, 
-      defaultPageDescription, defaultSeoKeyword, 
-       ...neededHeaderFooterVariables} = headerFooterData;
+    // const { updated_at, created_at, published_at, id, defaultPageTitle, 
+    //   defaultPageDescription, defaultSeoKeyword, 
+    //    ...neededHeaderFooterVariables} = headerFooterData;
 
-    headerFooterData = neededHeaderFooterVariables;
+    // headerFooterData = neededHeaderFooterVariables;
 
-    const resContactPage = await axios.get(`/contact-page`);
-    const contactPageData = resContactPage.data;
+    // const resContactPage = await axios.get(`/contact-page`);
+    // const contactPageData = resContactPage.data;
+
+    axios.get("/");
     
     return {
-      props: { headerFooterData, contactPageData }
+      props: { 
+        headerFooterData: defaultData.headerFooterData, 
+        contactPageData: defaultData.contactPageData 
+      }
     }
   }
   catch(error){
