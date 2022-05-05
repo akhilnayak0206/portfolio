@@ -50,6 +50,7 @@ function Layout({ title, keywords, description, children, headerFooterData }) {
         <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
+	<meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SEO} />
       </Head>
       <Header headerFooterData={headerFooterData} />
         {/* <div id="#roundedCursor" className={`${styles.cursor} ${styles.rounded}`}></div>
