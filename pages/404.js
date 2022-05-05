@@ -7,6 +7,7 @@ import Link from "next/link";
 import defaultData from '../defaultData.json';
 import axios from "axios";
 import apiAppendData from 'utils/apiAppendData';
+import { SECRET_API_URL } from "../config/index";
 
 export default function NotFoundPage({ headerFooterData }) {
 
@@ -72,7 +73,7 @@ export default function NotFoundPage({ headerFooterData }) {
 
 export async function getStaticProps() {
   try {
-    axios.get(`/`);
+    axios.get(SECRET_API_URL);
 
     return {
       props: { headerFooterData: defaultData.headerFooterData }

@@ -12,6 +12,7 @@ import defaultData from '../defaultData.json';
 import ReactMarkdown from 'react-markdown';
 import apiAppendData from 'utils/apiAppendData';
 // import { getLocation } from '../utils/apiAppendData';
+import { SECRET_API_URL } from "../config/index";
 
 export default function HomePage({
   headerFooterData,
@@ -474,7 +475,7 @@ export async function getServerSideProps({ req }) {
     // };
 
     //  SINCE THE HEROKU APP GOES TO SLEEP DUE TO INACTIVITY FOR MORE THAN 30 MINS THE APP MAY NOT RESPOND TO API CALLS AT FIRST CALL
-    axios.get(`/`);
+    axios.get(SECRET_API_URL);
 
     return {
       props: { 
