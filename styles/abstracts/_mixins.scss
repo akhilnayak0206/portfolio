@@ -59,6 +59,13 @@ $breakpoint arguments choices
       @content;
     }
   }
+   // big desktop
+  @if $breakpoint == big-laptop {
+    @media only screen and (min-width: 1500px) {
+      //1800px/16
+      @content;
+    }
+  }
   // big desktop
   @if $breakpoint == big-desktop {
     @media only screen and (min-width: 112.5em) {

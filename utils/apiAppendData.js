@@ -8,7 +8,11 @@ const apiAppendData = async () =>{
         }
     }
     catch(error){
-        console.log(error)
+        let browser = whichBrowser();
+
+        return {
+            browser
+         }
     }
 }
 

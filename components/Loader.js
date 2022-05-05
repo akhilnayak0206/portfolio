@@ -11,6 +11,19 @@ function Loader(props) {
 
   const [loader, setLoader] = useContext(LoaderContext);
 
+  return (
+    <div className={`${styles.loader__mainDiv}`}>
+      <div>
+          <div>
+                <Image layout="fixed" src={LoaderIcon} alt="loader" />
+          </div>
+      </div>
+    </div>
+  );
+}
+
+export default Loader;
+
   // // loading controller
   // useEffect(() => {
   //   // const handleStart = (url) => (url !== router.asPath) && setLoader(true);
@@ -28,17 +41,3 @@ function Loader(props) {
   //       router.events.off('routeChangeError', handleComplete)
   //   }
   // })
-  
-
-  return (
-    <div className={`${styles.loader__mainDiv}`}>
-      <div>
-          <div>
-                <Image layout="fixed" src={LoaderIcon} alt="loader" />
-          </div>
-      </div>
-    </div>
-  );
-}
-
-export default Loader;

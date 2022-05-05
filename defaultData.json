@@ -4,7 +4,7 @@
     "infoTitle": "Information",
     "infoContent": "Mumbai, Maharashtra, India",
     "myContactEmail": "nayak@duck.com",
-    "linkedInUrl": "https://in.linkedin.com/in/akhil-nayak-808923144",
+    "linkedInUrl": "https://in.linkedin.com/in/akhil-nayak",
     "twitterUrl": "https://twitter.com/n_akhil_000",
     "instagramUrl": null,
     "stackoverflowUrl": "https://stackoverflow.com/users/11380693/akhil-nayak",
@@ -26,7 +26,7 @@
     "section2IntroTitle": "Introduction",
     "section2IntroP1": "Hello! I'm Akhil Nayak",
     "section2IntroP2": "Every great design begins with an even better story",
-    "section2IntroP3": "Since beginning my journey.",
+    "section2IntroP3": "I am a self-learnt developer learning and coding since 2018. Started my journey from FreeCodeCamp and then started solving problems on HackerRank. Have been creating websites, mobile applications and providing solutions on StackOverflow in my free time.",
     "discoverProjectTitle": "Discover Projects",
     "discoverProjectSubtitle": "I consider making projects as part of learning as well as a fun activity",
     "viewAllProjectButton": "View All Projects",
@@ -35,7 +35,7 @@
     "section1MotoTitle": "Simplicity is the\nsoul of efficiency.",
     "section1MotoSubtitle": "I design and code beautifully simple things,\nand I love what I do.",
     "yearsOfExpText": "YEARS\nOF EXPERIENCE",
-    "projectsCompletedText": "PROJECTS COMPLETED SINCE 2017",
+    "projectsCompletedText": "PROJECTS COMPLETED SINCE 2018",
     "published_at": "2022-04-05T07:46:06.861Z",
     "created_at": "2022-04-05T07:46:05.525Z",
     "updated_at": "2022-04-05T07:46:06.882Z",
@@ -48,7 +48,7 @@
     "id": 1,
     "animation": true,
     "developerType": ["Web", "Software", "Back-End", "Front-End", "Mobile-App"],
-    "animationTextP1": "Your Friendly Neighbourhood",
+    "animationTextP1": "Your Friendly Neighborhood",
     "animationTextP3": "developer",
     "pageTitle": "Contact Akhil",
     "pageDescription": "Contact Information on Akhil.",
@@ -59,7 +59,81 @@
       "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1649834731/mumbai_533e5171aa.png"
     }
   },
-  "skills": [],
+  "skills": [
+    {
+      "title": "HTML5",
+      "description": "[HTML5](https://en.wikipedia.org/wiki/HTML5) is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and final major HTML version that is a World Wide Web Consortium recommendation.",
+      "position": 1,
+      "image": {
+        "name": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425",
+        "formats": {
+          "thumbnail": {
+            "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1649837175/thumbnail_1024px_HTML_5_logo_and_wordmark_svg_c575019bba.png",
+            "name": "HTML5_logo"
+          }
+        },
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1649837175/1024px_HTML_5_logo_and_wordmark_svg_c575019bba.png"
+      }
+    },
+    {
+      "title": "CSS3",
+      "description": "[Cascading Style Sheets](https://en.wikipedia.org/wiki/CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML",
+      "position": 2,
+      "image": {
+        "name": "CSS3_logo",
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650111837/CSS_3_logo_and_wordmark_9dee2645e6.svg"
+      }
+    },
+    {
+      "title": "JavaScript",
+      "description": "[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS",
+      "position": 3,
+      "image": {
+        "name": "javaScript-logo-1.png",
+        "alternativeText": "",
+        "formats": {
+          "thumbnail": {
+            "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650111747/thumbnail_java_Script_logo_1_d51b16f958.png"
+          }
+        },
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650111746/java_Script_logo_1_d51b16f958.png"
+      }
+    },
+    {
+      "title": "React-Native",
+      "description": "[React Native](https://reactnative.dev/) combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.",
+      "position": 7,
+      "image": {
+        "name": "reactPic.svg",
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650110109/react_Pic_fd974a40d6.svg"
+      }
+    },
+    {
+      "title": "NodeJS",
+      "description": "[Node.js](https://nodejs.org/en/) is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser",
+      "position": 6,
+      "image": {
+        "name": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png",
+        "formats": {
+          "thumbnail": {
+            "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650113151/thumbnail_1280px_Node_js_logo_svg_f687581a26.png",
+            "name": "Node.js_logo"
+          }
+        },
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650113151/1280px_Node_js_logo_svg_f687581a26.png"
+      }
+    },
+    {
+      "title": "React",
+      "description": "[React](https://reactjs.org/) is a free and open-source front-end JavaScript library for building user interfaces based on UI components.",
+      "position": 4,
+      "image": {
+        "name": "reactPic.svg",
+        "alternativeText": "",
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1650110109/react_Pic_fd974a40d6.svg"
+      }
+    }
+  ],
   "projects": [
     {
       "id": 3,

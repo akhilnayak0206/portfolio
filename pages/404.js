@@ -1,14 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/pages/NotFoundPage.module.scss";
 import Layout from "../components/Layout";
 import error404 from '../public/error-404.svg'
 import Link from "next/link";
+import defaultData from '../defaultData.json';
+import axios from "axios";
+import apiAppendData from 'utils/apiAppendData';
 
-export default function NotFoundPage({ events }) {
+export default function NotFoundPage({ headerFooterData }) {
+
+  const [headFootData, setHeadFootData] = useState(headerFooterData)
+
+  // get data from API after waking the Heroku Dyno
+  useEffect(() => {
+    let callInitialData = async() =>{
+      try {
+        let headers = {};
+        // let data = await apiAppendData();
+        // headers['fullInfoFromApi'] = JSON.stringify(data);
+        // headers['location'] = JSON.stringify(data.ipAndLocationData);
+        // headers['browser'] = data.browser;
+
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
+    
+            setHeadFootData(headerFooterData);
+      }
+      catch(error){
+        console.log(error,"error");
+      }
+    }
+
+    callInitialData();
+  }, [])
 
   return (
-    <Layout title="Akhil Nayak">
+    <Layout title="Akhil Nayak" headerFooterData={headFootData}>
       <div className={styles.notFoundPage}>
         <main>
             <div className={`${styles.container} ${styles.notFoundDiv}`}>
@@ -35,4 +68,23 @@ export default function NotFoundPage({ events }) {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    axios.get(`/`);
+
+    return {
+      props: { headerFooterData: defaultData.headerFooterData }
+    }
+  }
+  catch(error){
+    console.log(error);
+    return {
+      props: { 
+        headerFooterData: defaultData.headerFooterData, 
+        skills: defaultData.skills 
+      }
+    }
+  }
 }

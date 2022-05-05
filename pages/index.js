@@ -2,15 +2,16 @@ import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import styles from '../styles/pages/HomePage.module.scss';
 import Layout from '../components/Layout';
-import myPic from '../public/meditation-1.jpeg';
+import myPic from '../public/meditate-world.png';
 import javaScriptLogo from '../public/javascript-logo-1.png';
 import imgCodeIcon from '../public/code-icon.svg';
-import { LoaderContext, ChatMeContext } from '../components/Context';
+import { ChatMeContext } from '../components/Context';
 import Link from 'next/link';
 import axios from 'axios';
 import defaultData from '../defaultData.json';
-import { getLocation } from '../utils/apiAppendData';
 import ReactMarkdown from 'react-markdown';
+import apiAppendData from 'utils/apiAppendData';
+// import { getLocation } from '../utils/apiAppendData';
 
 export default function HomePage({
   headerFooterData,
@@ -24,6 +25,102 @@ export default function HomePage({
   const [secondSectionCard, setSecondSectionCard] = useState(developerTypeData);
   const [achievements, setAchievements] = useState(achievementsData);
   const [projects, setProjects] = useState(projectData);
+
+
+  // data used to update after component is mounted
+  const [headFootData, setHeadFootData] = useState(headerFooterData);
+  const [stateHomePageData, setStateHomePageData] = useState(homepageData);
+
+  // get data from API after waking the Heroku Dyno
+  useEffect(() => {
+    let callInitialData = async() =>{
+      try {
+        let headers = {};
+        // let data = await apiAppendData();
+        // headers['fullInfoFromApi'] = JSON.stringify(data);
+        // headers['location'] = JSON.stringify(data.ipAndLocationData);
+        // headers['browser'] = data.browser;
+
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
+    
+        const resHomePage = await axios.get(`/home-page`,{headers});
+        const homepageData = resHomePage.data;
+    
+        const resProjectPage = await axios.get(`/projects?showOnHomePage=true&_sort=positionOnHomePage`,{headers});
+        let projectData = resProjectPage.data;
+    
+        projectData = projectData.map((value)=>{
+          const { heroImage } = value;
+    
+          return {
+            heroImage:{
+              url: heroImage.url,
+              name: heroImage.name,
+              formats:{
+                small:{
+                  url: heroImage?.formats?.small?.url
+                }
+              }
+            }
+          }
+        })
+    
+        const resAchievements = await axios.get(`/achievement-years?_sort=year:desc`,{headers});
+        let achievementsData = resAchievements.data;
+    
+        achievementsData = achievementsData.map((value)=>{
+          let { year, achievements, ...notNeededAchievementValues } = value;
+          achievements.sort((a,b)=>b.position-a.position);
+    
+          achievements = achievements.map((value)=>{
+          let { title, subtitle, ...notNeededAchievementValues } = value;
+    
+          return {
+            title, subtitle
+          }
+          })
+    
+          if(achievements.length){
+            return {
+              year, achievements
+            }
+          }
+          return false;
+        })
+    
+        achievementsData = achievementsData.filter((value)=>value && value);
+    
+        const developerTypeRes = await axios.get(`/developer-types?_sort=id`,{headers}); 
+        let developerTypeData = developerTypeRes.data;
+    
+        developerTypeData = developerTypeData.map((value)=>{
+          const { title, subtitle, numberOfProjects, ...notNeededValues } = value;
+    
+          return {
+            title, subtitle, numberOfProjects
+          }
+        })
+    
+            setHeadFootData(headerFooterData); 
+            setStateHomePageData(homepageData); 
+            setProjects(projectData); 
+            setAchievements(achievementsData); 
+            setSecondSectionCard(developerTypeData);
+      }
+      catch(error){
+        console.log(error,"error");
+      }
+    }
+
+    callInitialData();
+  }, [])
+
 
   const {
     pageTitle,
@@ -47,7 +144,7 @@ export default function HomePage({
     section1Image,
     yearsOfExpText,
     yearsOfExp,
-  } = homepageData || {};
+  } = stateHomePageData || {};
 
   useEffect(() => {
     let yearsOfExpElement = document.getElementById('#yearsOfExp');
@@ -58,7 +155,7 @@ export default function HomePage({
   }, []);
 
   return (
-    <Layout title='About Akhil Nayak' headerFooterData={headerFooterData}>
+    <Layout title={pageTitle} description={pageDescription} keywords={seoKeywords} headerFooterData={headFootData}>
       <div className={styles.homepage}>
         <main>
           <section className={`${styles.container} ${styles.firstSection}`}>
@@ -107,10 +204,11 @@ export default function HomePage({
                     <Image
                       // src={myPic}
                       src={section1Image?.url || myPic}
+                      priority
                       alt='akhil nayak'
                       layout='fill'
                       objectFit='contain'
-                      objectPosition='bottom'
+                      objectPosition='center'
                     />
                   </div>
                 </div>
@@ -171,7 +269,7 @@ export default function HomePage({
                     key={key}
                   >
                     {/* eslint-disable-next-line @next/next/link-passhref */}
-                    <Link href='/projects' replace>
+                    {/* <Link href='/projects' replace passHref> */}
                       <Image
                         // src="https://res.cloudinary.com/dx0wpoeyu/image/upload/v1580740705/Alzheimer%20App/screenshots/1loginPage.jpg"
                         // src="https://res.cloudinary.com/dx0wpoeyu/image/upload/v1580730539/Dev%20Forum/web/homePageWeb.png"
@@ -182,7 +280,7 @@ export default function HomePage({
                         height='200px'
                         objectFit='contain'
                       />
-                    </Link>
+                    {/* </Link> */}
                   </div>
                 ))}
               {/* </div> */}
@@ -273,114 +371,129 @@ function animateNumber(obj, initVal, lastVal, duration) {
 
 export async function getServerSideProps({ req }) {
   try {
-    // let addThisInFullInfo = await getLocation();
-    let headers = {};
-    // if(addThisInFullInfo){
-    //   headers['fullInfoFromApi'] = JSON.stringify(addThisInFullInfo);
-    headers['referer'] = 'portfolio-homepage';
-    // }
+    // // let addThisInFullInfo = await getLocation();
+    // let headers = {};
+    // // if(addThisInFullInfo){
+    // //   headers['fullInfoFromApi'] = JSON.stringify(addThisInFullInfo);
+    // headers['referer'] = 'portfolio-homepage';
+    // // }
 
-    const resHeaderFooter = await axios.get(`/header-footer`, { headers });
-    let headerFooterData = resHeaderFooter.data;
-    const {
-      updated_at,
-      created_at,
-      published_at,
-      id,
-      defaultPageTitle,
-      defaultPageDescription,
-      defaultSeoKeyword,
-      ...neededHeaderFooterVariables
-    } = headerFooterData;
+    // const resHeaderFooter = await axios.get(`/header-footer`, { headers });
+    // let headerFooterData = resHeaderFooter.data;
+    // const {
+    //   updated_at,
+    //   created_at,
+    //   published_at,
+    //   id,
+    //   defaultPageTitle,
+    //   defaultPageDescription,
+    //   defaultSeoKeyword,
+    //   ...neededHeaderFooterVariables
+    // } = headerFooterData;
 
-    headerFooterData = neededHeaderFooterVariables;
+    // headerFooterData = neededHeaderFooterVariables;
 
-    const resHomePage = await axios.get(`/home-page`, { headers });
-    const homepageData = resHomePage.data;
+    // const resHomePage = await axios.get(`/home-page`, { headers });
+    // const homepageData = resHomePage.data;
 
-    const resProjectPage = await axios.get(
-      `/projects?showOnHomePage=true&_sort=positionOnHomePage`,
-      { headers }
-    );
-    let projectData = resProjectPage.data;
+    // const resProjectPage = await axios.get(
+    //   `/projects?showOnHomePage=true&_sort=positionOnHomePage`,
+    //   { headers }
+    // );
+    // let projectData = resProjectPage.data;
 
-    projectData = projectData.map((value) => {
-      const { heroImage } = value;
+    // projectData = projectData.map((value) => {
+    //   const { heroImage } = value;
 
-      return {
-        heroImage: {
-          url: heroImage.url,
-          name: heroImage.name,
-          formats: {
-            small: {
-              url: heroImage?.formats?.small?.url,
-            },
-          },
-        },
-      };
-    });
+    //   return {
+    //     heroImage: {
+    //       url: heroImage.url,
+    //       name: heroImage.name,
+    //       formats: {
+    //         small: {
+    //           url: heroImage?.formats?.small?.url,
+    //         },
+    //       },
+    //     },
+    //   };
+    // });
 
-    const resAchievements = await axios.get(
-      `/achievement-years?_sort=year:desc`,
-      { headers }
-    );
-    let achievementsData = resAchievements.data;
+    // const resAchievements = await axios.get(
+    //   `/achievement-years?_sort=year:desc`,
+    //   { headers }
+    // );
+    // let achievementsData = resAchievements.data;
 
-    achievementsData = achievementsData.map((value) => {
-      let { year, achievements, ...notNeededAchievementValues } = value;
-      achievements.sort((a, b) => b.position - a.position);
+    // achievementsData = achievementsData.map((value) => {
+    //   let { year, achievements, ...notNeededAchievementValues } = value;
+    //   achievements.sort((a, b) => b.position - a.position);
 
-      achievements = achievements.map((value) => {
-        let { title, subtitle, ...notNeededAchievementValues } = value;
+    //   achievements = achievements.map((value) => {
+    //     let { title, subtitle, ...notNeededAchievementValues } = value;
 
-        return {
-          title,
-          subtitle,
-        };
-      });
+    //     return {
+    //       title,
+    //       subtitle,
+    //     };
+    //   });
 
-      if (achievements.length) {
-        return {
-          year,
-          achievements,
-        };
-      }
-      return false;
-    });
+    //   if (achievements.length) {
+    //     return {
+    //       year,
+    //       achievements,
+    //     };
+    //   }
+    //   return false;
+    // });
 
-    achievementsData = achievementsData.filter((value) => value && value);
+    // achievementsData = achievementsData.filter((value) => value && value);
 
-    const developerTypeRes = await axios.get(`/developer-types?_sort=id`, {
-      headers,
-    });
-    let developerTypeData = developerTypeRes.data;
+    // const developerTypeRes = await axios.get(`/developer-types?_sort=id`, {
+    //   headers,
+    // });
+    // let developerTypeData = developerTypeRes.data;
 
-    developerTypeData = developerTypeData.map((value) => {
-      const { title, subtitle, numberOfProjects, ...notNeededValues } = value;
+    // developerTypeData = developerTypeData.map((value) => {
+    //   const { title, subtitle, numberOfProjects, ...notNeededValues } = value;
 
-      return {
-        title,
-        subtitle,
-        numberOfProjects,
-      };
-    });
+    //   return {
+    //     title,
+    //     subtitle,
+    //     numberOfProjects,
+    //   };
+    // });
+
+    // return {
+    //   props: {
+    //     headerFooterData,
+    //     homepageData,
+    //     projectData,
+    //     achievementsData,
+    //     developerTypeData,
+    //   },
+    // };
+
+    //  SINCE THE HEROKU APP GOES TO SLEEP DUE TO INACTIVITY FOR MORE THAN 30 MINS THE APP MAY NOT RESPOND TO API CALLS AT FIRST CALL
+    axios.get(`/`);
 
     return {
-      props: {
-        headerFooterData,
-        homepageData,
-        projectData,
-        achievementsData,
-        developerTypeData,
-      },
-    };
+      props: { 
+        headerFooterData: defaultData.headerFooterData, 
+        homepageData: defaultData.homepageData,
+        projectData: defaultData.projects,
+        achievementsData: defaultData.achievementsData,
+        developerTypeData: defaultData.developerTypeData 
+      }
+    }
+
+
   } catch (error) {
     console.log(error, 'error');
     return {
       props: {
         headerFooterData: defaultData.headerFooterData,
         homepageData: defaultData.homepageData,
-        projectData: defaultData.projectData,
+        projectData: defaultData.projects,
         achievementsData: defaultData.achievementsData,
         developerTypeData: defaultData.developerTypeData,
       },
