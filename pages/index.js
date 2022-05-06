@@ -40,28 +40,79 @@ export default function HomePage({
         // let data = await apiAppendData();
         // headers['fullInfoFromApi'] = JSON.stringify(data);
         // headers['location'] = JSON.stringify(data.ipAndLocationData);
-        // headers['browser'] = data.browser; 
+        // headers['browser'] = data.browser;
 
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
+    
         const resHomePage = await axios.get(`/home-page`,{headers});
         const homepageData = resHomePage.data;
-        setStateHomePageData(homepageData); 
-
-        const developerTypeRes = await axios.get(`/developer-types?_sort=id`,{headers}); 
-        let developerTypeData = developerTypeRes.data;
-        setSecondSectionCard(developerTypeData);
-
+    
         const resProjectPage = await axios.get(`/projects?showOnHomePage=true&_sort=positionOnHomePage`,{headers});
         let projectData = resProjectPage.data;
-        setProjects(projectData); 
+    
+        projectData = projectData.map((value)=>{
+          const { heroImage } = value;
+    
+          return {
+            heroImage:{
+              url: heroImage.url,
+              name: heroImage.name,
+              formats:{
+                small:{
+                  url: heroImage?.formats?.small?.url
+                }
+              }
+            }
+          }
+        })
     
         const resAchievements = await axios.get(`/achievement-years?_sort=year:desc`,{headers});
         let achievementsData = resAchievements.data;
-        setAchievements(achievementsData); 
-        
-        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
-        let headerFooterData = resHeaderFooter.data;
-        setHeadFootData(headerFooterData);
-
+    
+        achievementsData = achievementsData.map((value)=>{
+          let { year, achievements, ...notNeededAchievementValues } = value;
+          achievements.sort((a,b)=>b.position-a.position);
+    
+          achievements = achievements.map((value)=>{
+          let { title, subtitle, ...notNeededAchievementValues } = value;
+    
+          return {
+            title, subtitle
+          }
+          })
+    
+          if(achievements.length){
+            return {
+              year, achievements
+            }
+          }
+          return false;
+        })
+    
+        achievementsData = achievementsData.filter((value)=>value && value);
+    
+        const developerTypeRes = await axios.get(`/developer-types?_sort=id`,{headers}); 
+        let developerTypeData = developerTypeRes.data;
+    
+        developerTypeData = developerTypeData.map((value)=>{
+          const { title, subtitle, numberOfProjects, ...notNeededValues } = value;
+    
+          return {
+            title, subtitle, numberOfProjects
+          }
+        })
+    
+            setHeadFootData(headerFooterData); 
+            setStateHomePageData(homepageData); 
+            setProjects(projectData); 
+            setAchievements(achievementsData); 
+            setSecondSectionCard(developerTypeData);
       }
       catch(error){
         console.log(error,"error");

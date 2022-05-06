@@ -59,14 +59,19 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
         // headers['location'] = JSON.stringify(data.ipAndLocationData);
         // headers['browser'] = data.browser;
 
-        const resContactPage = await axios.get(`/contact-page`,{headers});
-        const contactPageAPICall = resContactPage.data;
-        setContactPage(contactPageAPICall);
-    
         const resHeaderFooter = await axios.get(`/header-footer`,{headers});
         let headerFooterData = resHeaderFooter.data;
-        setHeadFootData(headerFooterData);
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
 
+        const resContactPage = await axios.get(`/contact-page`,{headers});
+        const contactPageAPICall = resContactPage.data;
+    
+        setHeadFootData(headerFooterData);
+        setContactPage(contactPageAPICall);
       }
       catch(error){
         console.log(error,"error");
