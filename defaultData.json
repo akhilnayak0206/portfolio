@@ -6,16 +6,16 @@
     "myContactEmail": "nayak@duck.com",
     "linkedInUrl": "https://in.linkedin.com/in/akhil-nayak",
     "twitterUrl": "https://twitter.com/n_akhil_000",
-    "instagramUrl": null,
+    "instagramUrl": "https://www.instagram.com/akhilnayak_1/",
     "stackoverflowUrl": "https://stackoverflow.com/users/11380693/akhil-nayak",
     "githubUrl": "https://github.com/akhilnayak0206",
     "myEmail": "nayak@duck.com",
     "sayingHiLeftText": "Start by ",
     "sayingHiPoupText": "saying hi",
     "makeAmazingText": "Let's make something \namazing together.",
-    "defaultPageTitle": null,
-    "defaultPageDescription": null,
-    "defaultSeoKeyword": null
+    "defaultPageTitle": "About Akhil Nayak",
+    "defaultPageDescription": "Akhil Nayak's Portfolio. Information on Akhil Nayak. Akhil Nayak is a developer who loves to create website and mobile application",
+    "defaultSeoKeyword": "akhil, nayak, akhilnayak0206, akhil0206, akhil02, akhilnayak02, akhil-nayak, akhilnayak, akhil nayak, portfolio, front-end developer, developer, frontend, fullstack, backend, software, full-stack developer, JavaScript, html, css, react, nodejs, IT, akhilnayak0206, akhil's portoflio, akhils"
   },
   "homepageData": {
     "id": 1,
@@ -39,10 +39,14 @@
     "published_at": "2022-04-05T07:46:06.861Z",
     "created_at": "2022-04-05T07:46:05.525Z",
     "updated_at": "2022-04-05T07:46:06.882Z",
-    "pageTitle": null,
-    "pageDescription": null,
-    "seoKeywords": null,
-    "section1Image": null
+    "pageTitle": "About Akhil Nayak",
+    "pageDescription": "Akhil Nayak's Portfolio. Information on Akhil Nayak. Akhil Nayak is a developer who loves to create website and mobile application",
+    "seoKeywords": "akhil, nayak, akhilnayak0206, akhil0206, akhil02, akhilnayak02, akhil-nayak, akhilnayak, akhil nayak, portfolio, front-end developer, developer, frontend, fullstack, backend, software, full-stack developer, JavaScript, html, css, react, nodejs, IT, akhilnayak0206, akhil's portoflio, akhils",
+    "section1Image": {
+      "name": "meditate-world.png",
+      "alternativeText": "",
+      "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1651219622/meditate_world_fea9401906.png"
+    }
   },
   "contactPageData": {
     "id": 1,
@@ -51,8 +55,8 @@
     "animationTextP1": "Your Friendly Neighborhood",
     "animationTextP3": "developer",
     "pageTitle": "Contact Akhil",
-    "pageDescription": "Contact Information on Akhil.",
-    "seoKeyword": "contact akhil, akhil nayak, email akhil, call akhil, akhil info",
+    "pageDescription": "Contact Information of Akhil Nayak. Akhil Nayak is a developer who loves to create website and mobile application.",
+    "seoKeyword": "akhil, nayak, akhilnayak0206, akhil0206, akhil02, akhilnayak02, akhil-nayak, akhilnayak, akhil nayak, portfolio, front-end developer, developer,      frontend, fullstack, backend, software, full-stack developer, JavaScript, html, css, react, nodejs, IT, akhilnayak0206, akhil's portoflio, akhils, contact akhil nayak, contact akhil, contact akhilnayak0206, contact akhil02",
     "mapImage": {
       "id": 1,
       "name": "mumbai.png",

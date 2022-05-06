@@ -9,7 +9,15 @@ export default async (req, res) => {
         let headers = req.headers || {};;
         let data = await axios.get(`${SECRET_API_URL}/home-page`,headers);
 
-        res.status(200).json(data.data)
+        let homePageData = data.data;
+
+        let {section1Image, ...neededData} = homePageData;
+
+        homePageData = neededData
+
+        const { url } = section1Image; 
+
+        res.status(200).json({...homePageData, section1Image: { url }})
     }
     catch(err){
         console.log(err.message)

@@ -11,7 +11,19 @@ export default async (req, res) => {
         let queryToBeAdded = qs.stringify(req.query)
         let data = await axios.get(`${SECRET_API_URL}/developer-types?${queryToBeAdded}`,headers);
 
-        res.status(200).json(data.data);
+        let developerTypeData = data.data;
+
+        developerTypeData = developerTypeData.map((value) => {
+        const { title, subtitle, numberOfProjects, ...notNeededValues } = value;
+
+        return {
+            title,
+            subtitle,
+            numberOfProjects,
+        };
+        });
+
+        res.status(200).json(developerTypeData);
     }
     catch(err){
         console.log(err)

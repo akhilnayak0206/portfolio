@@ -11,7 +11,26 @@ export default async (req, res) => {
         let queryToBeAdded = qs.stringify(req.query)
         let data = await axios.get(`${SECRET_API_URL}/skills?${queryToBeAdded}`,headers);
 
-        res.status(200).json(data.data)
+        let skills = data.data;
+
+        skills = skills.map((value) => {
+            const { title, description, image } = value;
+
+            return {
+                title,
+                description,
+                image: {
+                    url: image.url,
+                    formats: {
+                    thumbnail: {
+                        url: image?.formats?.thumbnail?.url,
+                    },
+                    },
+                },
+            };
+          });
+
+        res.status(200).json(skills)
     }
     catch(err){
         console.log(err)

@@ -50,7 +50,7 @@ function Layout({ title, keywords, description, children, headerFooterData }) {
         <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
-	<meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SEO} />
+	      <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SEO} />
       </Head>
       <Header headerFooterData={headerFooterData} />
         {/* <div id="#roundedCursor" className={`${styles.cursor} ${styles.rounded}`}></div>
@@ -65,10 +65,12 @@ function Layout({ title, keywords, description, children, headerFooterData }) {
 
 Layout.defaultProps = {
   title: `Akhil Nayak's Portfolio`,
-  description: "Akhil Nayak's Portfolio. Information on Akhil Nayak",
+  description: "Akhil Nayak's Portfolio. Information on Akhil Nayak. Akhil Nayak is a developer who loves to create website and mobile application",
   keywords:
-    `akhil, nayak, akhil-nayak, akhilnayak, akhil nayak, portfolio, front-end developer, developer, 
-    frontend, fullstack, backend, software, full-stack developer, JavaScript, html, css, react, nodejs, IT, akhilnayak0206, akhil's portoflio, akhils`,
+    `akhil, nayak, akhilnayak0206, akhil0206, akhil02, akhilnayak02, 
+    akhil-nayak, akhilnayak, akhil nayak, portfolio, front-end developer, developer,      
+    frontend, fullstack, backend, software, full-stack developer, 
+    JavaScript, html, css, react, nodejs, IT, akhilnayak0206, akhil's portoflio, akhils`,
 };
 
 export default Layout;

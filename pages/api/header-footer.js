@@ -10,7 +10,15 @@ export default async (req, res) => {
         let headers = req.headers || {};;
         let data = await axios.get(`${SECRET_API_URL}/header-footer`,headers);
 
-        res.status(200).json(data.data)
+        let headerFooterData = data.data;
+
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+           ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
+
+        res.status(200).json(headerFooterData)
     }
     catch(err){
         console.log(err.message)
