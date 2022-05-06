@@ -16,8 +16,7 @@ export default function ProjectsPage({ headerFooterData, projects }) {
 
   // get data from API after waking the Heroku Dyno
   useEffect(() => {
-      let onPage = true;
-      let callInitialData = async() =>{
+    let callInitialData = async() =>{
       try {
         let headers = {};
         // let data = await apiAppendData();
@@ -25,31 +24,55 @@ export default function ProjectsPage({ headerFooterData, projects }) {
         // headers['location'] = JSON.stringify(data.ipAndLocationData);
         // headers['browser'] = data.browser;
 
-        let checkIfProjectsDataExists = localStorage.getItem("projectsData");
-        let checkIfHeaderFooterDataExists = localStorage.getItem("headerFooterData");
-
-        if(checkIfProjectsDataExists && onPage){
-          setProjectItems(JSON.parse(checkIfProjectsDataExists));
-        }
-
-        if(checkIfHeaderFooterDataExists && onPage){
-          setHeadFootData(JSON.parse(checkIfHeaderFooterDataExists));
-        }
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
 
         const resProjectData = await axios.get(`/projects?_sort=position`,{headers});
         let projectsData = resProjectData.data;
-        if(onPage){
-          setProjectItems(projectsData);
-          localStorage.setItem("projectsData", JSON.stringify(projectsData));
-        }
 
-        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
-        let headerFooterData = resHeaderFooter.data;
-        if(onPage){
-          setHeadFootData(headerFooterData);
-          localStorage.setItem("headerFooterData", JSON.stringify(headerFooterData));
-        }
+        projectsData = projectsData.map((value)=>{
+          let { heroImage, title, description,
+            codeUrl, websiteUrl,screenshots } = value;
+
+          screenshots = screenshots.map((screen)=>{
+            let { name, 
+              formats, 
+              url 
+            } = screen;
+
+            let temp = formats?.large?.url ? formats.large.url : url;
+
+            return {
+              name, url,
+              formats:{
+                large:{
+                  url: temp
+                }
+              }
+            }
+          })
+
+          return {
+            title, description, codeUrl, websiteUrl, screenshots,
+            heroImage:{
+              url: heroImage.url,
+              name: heroImage.name,
+              formats:{
+                small:{
+                  url: heroImage?.formats?.small?.url
+                }
+              }
+            }
+          }
+        })
     
+        setHeadFootData(headerFooterData);
+        setProjectItems(projectsData);
       }
       catch(error){
         console.log(error,"error");
@@ -57,10 +80,6 @@ export default function ProjectsPage({ headerFooterData, projects }) {
     }
 
     callInitialData();
-
-    return () => {
-      onPage = false;
-    };
   }, [])
 
   const closeCarousel = () => {

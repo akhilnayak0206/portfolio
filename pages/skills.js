@@ -14,7 +14,6 @@ export default function SkillsPage({ headerFooterData, skills }) {
 
   // get data from API after waking the Heroku Dyno
   useEffect(() => {
-    let onPage = true;
     let callInitialData = async() =>{
       try {
         let headers = {};
@@ -23,32 +22,19 @@ export default function SkillsPage({ headerFooterData, skills }) {
         // headers['location'] = JSON.stringify(data.ipAndLocationData);
         // headers['browser'] = data.browser;
 
-        let checkIfSkillsDataExists = localStorage.getItem("skillsData");
-        let checkIfHeaderFooterDataExists = localStorage.getItem("headerFooterData");
-
-        if(checkIfSkillsDataExists && onPage){
-          setSkillItems(JSON.parse(checkIfSkillsDataExists));
-        }
-
-        if(checkIfHeaderFooterDataExists && onPage){
-          setHeadFootData(JSON.parse(checkIfHeaderFooterDataExists));
-        }
+        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        let headerFooterData = resHeaderFooter.data;
+        const { updated_at, created_at, published_at, id, defaultPageTitle, 
+          defaultPageDescription, defaultSeoKeyword, 
+          ...neededHeaderFooterVariables} = headerFooterData;
+    
+        headerFooterData = neededHeaderFooterVariables;
 
         const resSkills = await axios.get(`/skills?_sort=position`);
         const skillsData = resSkills.data;
-        if(onPage){
-          setSkillItems(skillsData);
-          localStorage.setItem("skillsData", JSON.stringify(skillsData));
-        }
-
-        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
-        let headerFooterData = resHeaderFooter.data;
-        if(onPage){
-          setHeadFootData(headerFooterData);
-          localStorage.setItem("headerFooterData", JSON.stringify(headerFooterData));
-        }
-        
     
+        setHeadFootData(headerFooterData);
+        setSkillItems(skillsData);
       }
       catch(error){
         console.log(error,"error");
@@ -56,10 +42,6 @@ export default function SkillsPage({ headerFooterData, skills }) {
     }
 
     callInitialData();
-
-    return () => {
-      onPage = false;
-    };
   }, [])
 
   return (
