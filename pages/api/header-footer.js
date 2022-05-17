@@ -7,7 +7,11 @@ import { SECRET_API_URL } from "../../config/index";
 export default async (req, res) => {
     // res.status(200).json({ name: `Hi, I'm Akhil Nayak` })
     try{
-        let headers = req.headers || {};;
+        let headers = {};
+        const { browser, location, fullinfofromapi, referer } = req.headers;
+
+        headers = { browser, location, fullinfofromapi, referer };
+
         let data = await axios.get(`${SECRET_API_URL}/header-footer`,{headers});
 
         let headerFooterData = data.data;
