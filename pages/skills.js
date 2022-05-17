@@ -34,7 +34,7 @@ export default function SkillsPage({ headerFooterData, skills }) {
           setHeadFootData(JSON.parse(checkIfHeaderFooterDataExists));
         }
 
-        const resSkills = await axios.get(`/skills?_sort=position`);
+        const resSkills = await axios.get(`/skills?_sort=position`,{headers});
         const skillsData = resSkills.data;
         if(onPage){
           setSkillItems(skillsData);
