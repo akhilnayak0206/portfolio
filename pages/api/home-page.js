@@ -1,27 +1,30 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import axios from "axios"
+import axios from "axios";
 import { SECRET_API_URL } from "../../config/index";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
-    try{
-        let headers = req.headers || {};;
-        let data = await axios.get(`${SECRET_API_URL}/home-page`,{headers});
+  try {
+    let headers = { };
 
-        let homePageData = data.data;
+    const { browser, location, fullinfofromapi, referer } = req.headers;
 
-        let {section1Image, ...neededData} = homePageData;
+    headers = { browser, location, fullinfofromapi, referer };
 
-        homePageData = neededData
+    let data = await axios.get(`${SECRET_API_URL}/home-page`, { headers });
 
-        const { url } = section1Image; 
+    let homePageData = data.data;
 
-        res.status(200).json({...homePageData, section1Image: { url }})
-    }
-    catch(err){
-        console.log(err.message)
-        res.status(500).send(err)
-    }
+    let { section1Image, ...neededData } = homePageData;
+
+    homePageData = neededData;
+
+    const { url } = section1Image;
+
+    res.status(200).json({ ...homePageData, section1Image: { url } });
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send(err);
   }
-  
+};

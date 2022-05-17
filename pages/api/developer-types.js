@@ -7,7 +7,9 @@ import qs from 'qs'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
     try{
-        let headers = req.headers || {};;
+        let headers = {};
+        const { browser, location, fullinfofromapi, referer } = req.headers;
+        headers = { browser, location, fullinfofromapi, referer };
         let queryToBeAdded = qs.stringify(req.query)
         let data = await axios.get(`${SECRET_API_URL}/developer-types?${queryToBeAdded}`,{headers});
 

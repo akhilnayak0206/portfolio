@@ -7,7 +7,12 @@ import qs from 'qs'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
     try{
-        let headers = req.headers || {};
+        let headers =  {};
+
+        const { browser, location, fullinfofromapi, referer } = req.headers;
+
+        headers = { browser, location, fullinfofromapi, referer };
+
         let resBody = req.body;
         let data = await axios.post(`${SECRET_API_URL}/contact-mes/`, resBody, {headers});
 
