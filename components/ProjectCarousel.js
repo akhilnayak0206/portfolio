@@ -29,7 +29,9 @@ function ProjectCarousel(props) {
   return (
     <div className={`${styles.projectCarousel__mainDiv}`} onClick={()=>checkIfTablet && props.closeCarousel()}>
       <div>
-          <span onClick={()=>props.closeCarousel()}></span>
+          <div onClick={()=>props.closeCarousel()}>
+            <span></span>
+          </div>
           <div onClick={(e)=>e.stopPropagation()}>
             <AwesomeSlider>
               {

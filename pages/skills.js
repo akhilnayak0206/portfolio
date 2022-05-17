@@ -18,10 +18,10 @@ export default function SkillsPage({ headerFooterData, skills }) {
     let callInitialData = async() =>{
       try {
         let headers = {};
-        // let data = await apiAppendData();
-        // headers['fullInfoFromApi'] = JSON.stringify(data);
-        // headers['location'] = JSON.stringify(data.ipAndLocationData);
-        // headers['browser'] = data.browser;
+        let data = await apiAppendData();
+        headers['fullInfoFromApi'] = JSON.stringify(data);
+        headers['location'] = JSON.stringify(data.ipAndLocationData);
+        headers['browser'] = data.browser;
 
         let checkIfSkillsDataExists = localStorage.getItem("skillsData");
         let checkIfHeaderFooterDataExists = localStorage.getItem("headerFooterData");

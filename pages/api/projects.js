@@ -9,7 +9,7 @@ export default async (req, res) => {
     try{
         let headers = req.headers || {};;
         let queryToBeAdded = qs.stringify(req.query)
-        let data = await axios.get(`${SECRET_API_URL}/projects?${queryToBeAdded}`,headers);
+        let data = await axios.get(`${SECRET_API_URL}/projects?${queryToBeAdded}`,{headers});
 
         let projects = data.data;
 

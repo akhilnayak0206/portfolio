@@ -8,7 +8,7 @@ export default async (req, res) => {
     // res.status(200).json({ name: `Hi, I'm Akhil Nayak` })
     try{
         let headers = req.headers || {};;
-        let data = await axios.get(`${SECRET_API_URL}/header-footer`,headers);
+        let data = await axios.get(`${SECRET_API_URL}/header-footer`,{headers});
 
         let headerFooterData = data.data;
 

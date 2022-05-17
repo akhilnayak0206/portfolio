@@ -5,63 +5,67 @@ import Layout from "@/components/Layout";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import axios from "axios";
 import defaultData from "../../defaultData.json";
-import apiAppendData from 'utils/apiAppendData';
+import apiAppendData from "utils/apiAppendData";
 import { SECRET_API_URL } from "../../config/index";
 
 export default function ProjectsPage({ headerFooterData, projects }) {
   const [projectItems, setProjectItems] = useState(projects);
   const [showCarousel, setShowCarousel] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
-  const [headFootData, setHeadFootData] = useState(headerFooterData)
+  const [headFootData, setHeadFootData] = useState(headerFooterData);
 
   // get data from API after waking the Heroku Dyno
   useEffect(() => {
-      let onPage = true;
-      let callInitialData = async() =>{
+    let onPage = true;
+    let callInitialData = async () => {
       try {
         let headers = {};
-        // let data = await apiAppendData();
-        // headers['fullInfoFromApi'] = JSON.stringify(data);
-        // headers['location'] = JSON.stringify(data.ipAndLocationData);
-        // headers['browser'] = data.browser;
+        let data = await apiAppendData();
+        headers['fullInfoFromApi'] = JSON.stringify(data);
+        headers['location'] = JSON.stringify(data.ipAndLocationData);
+        headers['browser'] = data.browser;
 
         let checkIfProjectsDataExists = localStorage.getItem("projectsData");
-        let checkIfHeaderFooterDataExists = localStorage.getItem("headerFooterData");
+        let checkIfHeaderFooterDataExists =
+          localStorage.getItem("headerFooterData");
 
-        if(checkIfProjectsDataExists && onPage){
+        if (checkIfProjectsDataExists && onPage) {
           setProjectItems(JSON.parse(checkIfProjectsDataExists));
         }
 
-        if(checkIfHeaderFooterDataExists && onPage){
+        if (checkIfHeaderFooterDataExists && onPage) {
           setHeadFootData(JSON.parse(checkIfHeaderFooterDataExists));
         }
 
-        const resProjectData = await axios.get(`/projects?_sort=position`,{headers});
+        const resProjectData = await axios.get(`/projects?_sort=position`, {
+          headers,
+        });
         let projectsData = resProjectData.data;
-        if(onPage){
+        if (onPage) {
           setProjectItems(projectsData);
           localStorage.setItem("projectsData", JSON.stringify(projectsData));
         }
 
-        const resHeaderFooter = await axios.get(`/header-footer`,{headers});
+        const resHeaderFooter = await axios.get(`/header-footer`, { headers });
         let headerFooterData = resHeaderFooter.data;
-        if(onPage){
+        if (onPage) {
           setHeadFootData(headerFooterData);
-          localStorage.setItem("headerFooterData", JSON.stringify(headerFooterData));
+          localStorage.setItem(
+            "headerFooterData",
+            JSON.stringify(headerFooterData)
+          );
         }
-    
+      } catch (error) {
+        console.log(error, "error");
       }
-      catch(error){
-        console.log(error,"error");
-      }
-    }
+    };
 
     callInitialData();
 
     return () => {
       onPage = false;
     };
-  }, [])
+  }, []);
 
   const closeCarousel = () => {
     return setShowCarousel(false);
@@ -118,40 +122,32 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                         Open Screenshots
                       </div>
                       {data.websiteUrl && (
-                        <div className={styles.projectCardButtons__vcButton}>
-                          <a
-                            href={data.codeUrl}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
+                        <a href={data.codeUrl} rel="noreferrer" target="_blank">
+                          <div className={styles.projectCardButtons__vcButton}>
                             View Code
-                          </a>
-                        </div>
+                          </div>
+                        </a>
                       )}
                     </div>
                     {data.websiteUrl ? (
                       <div className={styles.projectCardButtons}>
-                        <div className={styles.projectCardButtons__vcButton}>
-                          <a
-                            href={data.websiteUrl}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
+                        <a
+                          href={data.websiteUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <div className={styles.projectCardButtons__vcButton}>
                             View Website
-                          </a>
-                        </div>
+                          </div>
+                        </a>
                       </div>
                     ) : (
                       <div className={styles.projectCardButtons}>
-                        <div className={styles.projectCardButtons__vcButton}>
-                          <a
-                            href={data.codeUrl}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
+                        <a href={data.codeUrl} rel="noreferrer" target="_blank">
+                          <div className={styles.projectCardButtons__vcButton}>
                             View Code
-                          </a>
-                        </div>
+                          </div>
+                        </a>
                       </div>
                     )}
                   </div>
@@ -170,8 +166,8 @@ export async function getStaticProps() {
     // const resHeaderFooter = await axios.get(`/header-footer`);
     // let headerFooterData = resHeaderFooter.data;
 
-    // const { updated_at, created_at, published_at, id, defaultPageTitle, 
-    //   defaultPageDescription, defaultSeoKeyword, 
+    // const { updated_at, created_at, published_at, id, defaultPageTitle,
+    //   defaultPageDescription, defaultSeoKeyword,
     //    ...neededHeaderFooterVariables} = headerFooterData;
 
     // headerFooterData = neededHeaderFooterVariables;
@@ -184,9 +180,9 @@ export async function getStaticProps() {
     //     codeUrl, websiteUrl,screenshots } = value;
 
     //   screenshots = screenshots.map((screen)=>{
-    //     let { name, 
-    //       formats, 
-    //       url 
+    //     let { name,
+    //       formats,
+    //       url
     //     } = screen;
 
     //     let temp = formats?.large?.url ? formats.large.url : url;
@@ -215,13 +211,13 @@ export async function getStaticProps() {
     //   }
     // })
 
-    axios.get(SECRET_API_URL)
+    axios.get(SECRET_API_URL);
 
     return {
-      props: { 
+      props: {
         headerFooterData: defaultData.headerFooterData,
-        projects: defaultData.projects
-       },
+        projects: defaultData.projects,
+      },
     };
   } catch (error) {
     console.log(error);

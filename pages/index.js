@@ -37,10 +37,10 @@ export default function HomePage({
     let callInitialData = async() =>{
       try {
         let headers = {};
-        // let data = await apiAppendData();
-        // headers['fullInfoFromApi'] = JSON.stringify(data);
-        // headers['location'] = JSON.stringify(data.ipAndLocationData);
-        // headers['browser'] = data.browser; 
+        let data = await apiAppendData();
+        headers['fullInfoFromApi'] = JSON.stringify(data);
+        headers['location'] = JSON.stringify(data.ipAndLocationData);
+        headers['browser'] = data.browser; 
 
         const resHomePage = await axios.get(`/home-page`,{headers});
         const homepageData = resHomePage.data;
@@ -96,13 +96,22 @@ export default function HomePage({
     yearsOfExp,
   } = stateHomePageData || {};
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   let yearsOfExpElement = document.getElementById('#yearsOfExp');
+  //   let projectDoneElement = document.getElementById('#projectsDone');
+
+  //   animateNumber(yearsOfExpElement, 0, yearsOfExp, 2000);
+  //   animateNumber(projectDoneElement, 0, projectCompleted, 2000);
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  useEffect(()=>{
     let yearsOfExpElement = document.getElementById('#yearsOfExp');
     let projectDoneElement = document.getElementById('#projectsDone');
 
     animateNumber(yearsOfExpElement, 0, yearsOfExp, 2000);
     animateNumber(projectDoneElement, 0, projectCompleted, 2000);
-  }, []);
+  },[projectCompleted, yearsOfExp])
 
   return (
     <Layout title={pageTitle} description={pageDescription} keywords={seoKeywords} headerFooterData={headFootData}>
