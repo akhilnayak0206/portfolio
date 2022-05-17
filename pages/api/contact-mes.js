@@ -9,7 +9,7 @@ export default async (req, res) => {
     try{
         let headers = req.headers || {};
         let resBody = req.body;
-        let data = await axios.post(`${SECRET_API_URL}/contact-mes/`, resBody, headers);
+        let data = await axios.post(`${SECRET_API_URL}/contact-mes/`, resBody, {headers});
 
         res.status(200).json(data.data);
     }

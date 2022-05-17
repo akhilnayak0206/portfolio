@@ -7,7 +7,7 @@ import { SECRET_API_URL } from "../../config/index";
 export default async (req, res) => {
     try{
         let headers = req.headers || {};;
-        let data = await axios.get(`${SECRET_API_URL}/home-page`,headers);
+        let data = await axios.get(`${SECRET_API_URL}/home-page`,{headers});
 
         let homePageData = data.data;
 
