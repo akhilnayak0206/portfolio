@@ -132,6 +132,10 @@
           a.active {
             color: $color-primary;
             margin-left: -15px;
+
+            @include respond (phone){
+              margin-left: -12px;
+            }
           }
 
           a.active::after {

@@ -18,7 +18,7 @@ const apiAppendData = async () =>{
 
 export const getLocation = async() =>{
     try { 
-        let ipApi = await fetch(`https://ipinfo.io/json?token=69e9221c22cb9d`);
+        let ipApi = await fetch(`https://ipinfo.io/json?token=${process.env.NEXT_PUBLIC_IP_INFO_TOKEN}`);
         let ipAndLocationData = await ipApi.json();
     
         return ipAndLocationData

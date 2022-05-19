@@ -7,6 +7,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 
+    @include respond (phone){
+      padding-top: 0px;
+    }
+
     .skillItem {
       display: flex;
       flex-direction: column;
