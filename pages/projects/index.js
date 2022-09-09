@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import styles from "@/styles/pages/ProjectsPage.module.scss";
-import Layout from "@/components/Layout";
-import ProjectCarousel from "@/components/ProjectCarousel";
-import axios from "axios";
-import defaultData from "../../defaultData.json";
-import apiAppendData from "utils/apiAppendData";
-import { SECRET_API_URL } from "../../config/index";
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import styles from '@/styles/pages/ProjectsPage.module.scss';
+import Layout from '@/components/Layout';
+import ProjectCarousel from '@/components/ProjectCarousel';
+import axios from 'axios';
+import defaultData from '../../defaultData.json';
+import apiAppendData from 'utils/apiAppendData';
+import { SECRET_API_URL } from '../../config/index';
 
 export default function ProjectsPage({ headerFooterData, projects }) {
   const [projectItems, setProjectItems] = useState(projects);
@@ -21,13 +21,15 @@ export default function ProjectsPage({ headerFooterData, projects }) {
       try {
         let headers = {};
         let data = await apiAppendData();
-        headers['fullInfoFromApi'] = JSON.stringify(data);
-        headers['location'] = JSON.stringify(data.ipAndLocationData);
+        headers['fullInfoFromApi'] = encodeURIComponent(JSON.stringify(data));
+        headers['location'] = encodeURIComponent(
+          JSON.stringify(data.ipAndLocationData)
+        );
         headers['browser'] = data.browser;
 
-        let checkIfProjectsDataExists = localStorage.getItem("projectsData");
+        let checkIfProjectsDataExists = localStorage.getItem('projectsData');
         let checkIfHeaderFooterDataExists =
-          localStorage.getItem("headerFooterData");
+          localStorage.getItem('headerFooterData');
 
         if (checkIfProjectsDataExists && onPage) {
           setProjectItems(JSON.parse(checkIfProjectsDataExists));
@@ -43,7 +45,7 @@ export default function ProjectsPage({ headerFooterData, projects }) {
         let projectsData = resProjectData.data;
         if (onPage) {
           setProjectItems(projectsData);
-          localStorage.setItem("projectsData", JSON.stringify(projectsData));
+          localStorage.setItem('projectsData', JSON.stringify(projectsData));
         }
 
         const resHeaderFooter = await axios.get(`/header-footer`, { headers });
@@ -51,12 +53,12 @@ export default function ProjectsPage({ headerFooterData, projects }) {
         if (onPage) {
           setHeadFootData(headerFooterData);
           localStorage.setItem(
-            "headerFooterData",
+            'headerFooterData',
             JSON.stringify(headerFooterData)
           );
         }
       } catch (error) {
-        console.log(error, "error");
+        console.log(error, 'error');
       }
     };
 
@@ -99,11 +101,11 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                             data?.heroImage?.formats?.small?.url ||
                             data.heroImage.url
                           }
-                          layout="fill"
+                          layout='fill'
                           alt={data.title}
                           // width="100%"
                           // height="100%"
-                          objectFit="contain"
+                          objectFit='contain'
                           className={styles.projectCardImage__Image}
                         />
                       </div>
@@ -122,7 +124,7 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                         Open Screenshots
                       </div>
                       {data.websiteUrl && (
-                        <a href={data.codeUrl} rel="noreferrer" target="_blank">
+                        <a href={data.codeUrl} rel='noreferrer' target='_blank'>
                           <div className={styles.projectCardButtons__vcButton}>
                             View Code
                           </div>
@@ -133,8 +135,8 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                       <div className={styles.projectCardButtons}>
                         <a
                           href={data.websiteUrl}
-                          rel="noreferrer"
-                          target="_blank"
+                          rel='noreferrer'
+                          target='_blank'
                         >
                           <div className={styles.projectCardButtons__vcButton}>
                             View Website
@@ -143,7 +145,7 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                       </div>
                     ) : (
                       <div className={styles.projectCardButtons}>
-                        <a href={data.codeUrl} rel="noreferrer" target="_blank">
+                        <a href={data.codeUrl} rel='noreferrer' target='_blank'>
                           <div className={styles.projectCardButtons__vcButton}>
                             View Code
                           </div>
