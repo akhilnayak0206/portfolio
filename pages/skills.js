@@ -24,6 +24,7 @@ export default function SkillsPage({ headerFooterData, skills }) {
           JSON.stringify(data.ipAndLocationData)
         );
         headers['browser'] = data.browser;
+        axios.get(`/api-called`, { headers });
 
         let checkIfSkillsDataExists = localStorage.getItem('skillsData');
         let checkIfHeaderFooterDataExists =

@@ -42,6 +42,7 @@ export default function HomePage({
           JSON.stringify(data.ipAndLocationData)
         );
         headers['browser'] = data.browser;
+        axios.get(`/api-called`, { headers });
 
         const resHomePage = await axios.get(`/home-page`, { headers });
         const homepageData = resHomePage.data;

@@ -26,6 +26,7 @@ export default function ProjectsPage({ headerFooterData, projects }) {
           JSON.stringify(data.ipAndLocationData)
         );
         headers['browser'] = data.browser;
+        axios.get(`/api-called`, { headers });
 
         let checkIfProjectsDataExists = localStorage.getItem('projectsData');
         let checkIfHeaderFooterDataExists =
