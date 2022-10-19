@@ -36,6 +36,6 @@ export default async (req, res) => {
     res.status(200).json({});
   } catch (err) {
     console.log(err.message);
-    res.status(500).send(err);
+    res.status(200).send(err);
   }
 };
