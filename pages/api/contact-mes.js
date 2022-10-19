@@ -1,8 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import axios from "axios";
-import { SECRET_API_URL, SECRET_API_CALLED, CHAT_ID, NODE_ENV } from "../../config/index";
-import qs from "qs";
+import axios from 'axios';
+import {
+  SECRET_API_URL,
+  SECRET_API_CALLED,
+  CHAT_ID,
+  NODE_ENV,
+} from '../../config/index';
+import qs from 'qs';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
@@ -29,7 +34,7 @@ export default async (req, res) => {
             ENV: NODE_ENV \n
             ${new Date()} : ${req.headers.host} \n
              
-            deviceId: ${req.headers["user-agent"]},  \n
+            deviceId: ${req.headers['user-agent']},  \n
             origin: ${req.headers.referer},  \n
             browser: ${req.headers.browser},  \n
             location: ${req.headers.location},  \n

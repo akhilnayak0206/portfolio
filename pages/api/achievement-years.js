@@ -1,9 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import axios from "axios";
-import { SECRET_API_URL, CHAT_ID, NODE_ENV, SECRET_API_CALLED } from "../../config/index";
-import qs from "qs";
-import achievementJSON from '../../utils/achievement.json'
+import axios from 'axios';
+import {
+  SECRET_API_URL,
+  CHAT_ID,
+  NODE_ENV,
+  SECRET_API_CALLED,
+} from '../../config/index';
+import qs from 'qs';
+import achievementJSON from '../../utils/achievement.json';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
@@ -49,20 +54,20 @@ export default async (req, res) => {
 
     res.status(200).json(achievementsData);
     axios.post(`${SECRET_API_CALLED}`, {
-        chat_id: CHAT_ID,
-        text: `
+      chat_id: CHAT_ID,
+      text: `
               Portfolio Website \n
               ENV: NODE_ENV \n
               ${new Date()} : ${req.headers.host} \n
                
-              deviceId: ${req.headers["user-agent"]},  \n
+              deviceId: ${req.headers['user-agent']},  \n
               origin: ${req.headers.referer},  \n
               browser: ${req.headers.browser},  \n
               location: ${req.headers.location},  \n
                
               fullInfoFromApi: ${JSON.stringify(req.headers.fullinfofromapi)}
               `,
-      });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
