@@ -19,10 +19,8 @@ export default function SkillsPage({ headerFooterData, skills }) {
       try {
         let headers = {};
         let data = await apiAppendData();
-        headers['fullInfoFromApi'] = encodeURIComponent(JSON.stringify(data));
-        headers['location'] = encodeURIComponent(
-          JSON.stringify(data.ipAndLocationData)
-        );
+        headers['fullInfoFromApi'] = JSON.stringify(data);
+        headers['location'] = JSON.stringify(data.ipAndLocationData);
         headers['browser'] = data.browser;
         axios.get(`/api-called`, { headers });
 
