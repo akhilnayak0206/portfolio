@@ -73,6 +73,7 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
           JSON.stringify(data.ipAndLocationData)
         );
         headers['browser'] = data.browser;
+        axios.get(`/api-called`, { headers });
 
         const resContactPage = await axios.get(`/contact-page`, { headers });
         const contactPageAPICall = resContactPage.data;
