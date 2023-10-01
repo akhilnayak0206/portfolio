@@ -1,6 +1,35 @@
 {
   "data": [
     {
+      "id": 6,
+      "year": 2023,
+      "published_at": "2023-04-16T09:47:06.223Z",
+      "created_at": "2023-04-16T09:47:04.846Z",
+      "updated_at": "2023-04-16T09:47:06.235Z",
+      "achievements": [
+        {
+          "id": 20231001,
+          "title": "Applause Award",
+          "subtitle": "Applause Award for working on a Q&A full stack project for seamless fusion of innovation and user-centric design.",
+          "achievement_year": 6,
+          "published_at": "2023-09-10T09:55:56.551Z",
+          "created_at": "2023-09-10T09:55:49.924Z",
+          "updated_at": "2023-09-10T09:55:56.564Z",
+          "position": 7
+        },
+        {
+          "id": 20231002,
+          "title": "Course Completion Certificate",
+          "subtitle": "Certificate for completing AWS Solution Architect Associate from [Udemy](https://www.udemy.com/certificate/UC-ec9e72cc-286a-4ac6-b4d0-ea0b1289db10/)",
+          "achievement_year": 6,
+          "published_at": "2023-09-10T09:55:56.551Z",
+          "created_at": "2023-09-10T09:55:49.924Z",
+          "updated_at": "2023-09-10T09:55:56.564Z",
+          "position": 6
+        }
+      ]
+    },
+    {
       "id": 5,
       "year": 2022,
       "published_at": "2022-04-16T09:47:06.223Z",
