@@ -276,7 +276,7 @@ export async function getStaticProps() {
     // const resContactPage = await axios.get(`/contact-page`);
     // const contactPageData = resContactPage.data;
 
-    axios.get(SECRET_API_URL);
+    // axios.get(SECRET_API_URL);
 
     return {
       props: {
