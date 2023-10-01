@@ -21,7 +21,7 @@ export default function NotFoundPage({ headerFooterData }) {
         headers['fullInfoFromApi'] = JSON.stringify(data);
         headers['location'] = JSON.stringify(data.ipAndLocationData);
         headers['browser'] = data.browser;
-        axios.get(`/api-called`, { headers });
+        axios.get(`/api-called`, { headers }).then().catch(err=>null);
 
         const resHeaderFooter = await axios.get(`/header-footer`, { headers });
         let headerFooterData = resHeaderFooter.data;
