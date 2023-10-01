@@ -1128,6 +1128,51 @@
         "created_at": "2022-05-15T07:22:55.862Z",
         "updated_at": "2022-05-15T07:22:55.873Z"
       }
+    },
+    {
+      "id": 22,
+      "title": "AWS",
+      "description": "[Amazon Web Services](https://aws.amazon.com/) offers reliable, scalable, and inexpensive cloud computing services. Free to join, pay only for what you use",
+      "published_at": "2022-05-15T07:23:04.966Z",
+      "created_at": "2022-05-15T07:23:03.191Z",
+      "updated_at": "2022-05-15T07:23:04.983Z",
+      "position": 21,
+      "image": {
+        "id": 212,
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1696163362/wzx0svfxhoykof9ytq9n.png",
+        "created_at": "2022-05-15T07:22:55.862Z",
+        "updated_at": "2022-05-15T07:22:55.873Z"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Docker",
+      "description": "[Docker](https://www.docker.com/) is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers",
+      "published_at": "2022-05-15T07:23:04.966Z",
+      "created_at": "2022-05-15T07:23:03.191Z",
+      "updated_at": "2022-05-15T07:23:04.983Z",
+      "position": 22,
+      "image": {
+        "id": 214,
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1696163526/tjlgrhu29hxougpkc4i9.png",
+        "created_at": "2022-05-15T07:22:55.862Z",
+        "updated_at": "2022-05-15T07:22:55.873Z"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Angular",
+      "description": "[Angular](https://angular.io/) is a TypeScript-based, free and open-source single-page web application framework led by the Angular Team at Google and by a community of individuals and corporations",
+      "published_at": "2022-05-15T07:23:04.966Z",
+      "created_at": "2022-05-15T07:23:03.191Z",
+      "updated_at": "2022-05-15T07:23:04.983Z",
+      "position": 23,
+      "image": {
+        "id": 215,
+        "url": "https://res.cloudinary.com/dx0wpoeyu/image/upload/v1696163666/lfqol0tizkmclgdzbjjv.png",
+        "created_at": "2022-05-15T07:22:55.862Z",
+        "updated_at": "2022-05-15T07:22:55.873Z"
+      }
     }
   ]
 }
