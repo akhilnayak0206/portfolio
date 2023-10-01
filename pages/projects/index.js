@@ -212,7 +212,7 @@ export async function getStaticProps() {
     //   }
     // })
 
-    axios.get(SECRET_API_URL);
+    // axios.get(SECRET_API_URL);
 
     return {
       props: {

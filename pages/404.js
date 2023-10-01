@@ -80,7 +80,7 @@ export default function NotFoundPage({ headerFooterData }) {
 
 export async function getStaticProps() {
   try {
-    axios.get(SECRET_API_URL);
+    // axios.get(SECRET_API_URL);
 
     return {
       props: { headerFooterData: defaultData.headerFooterData },
