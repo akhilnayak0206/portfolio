@@ -118,7 +118,7 @@ export async function getStaticProps() {
     // const resSkills = await axios.get(`/skills?_sort=position`);
     // const skills = resSkills.data;
 
-    axios.get(SECRET_API_URL);
+    // axios.get(SECRET_API_URL);
 
     return {
       props: {

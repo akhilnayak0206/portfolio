@@ -444,7 +444,7 @@ export async function getServerSideProps({ req }) {
     // };
 
     //  SINCE THE HEROKU APP GOES TO SLEEP DUE TO INACTIVITY FOR MORE THAN 30 MINS THE APP MAY NOT RESPOND TO API CALLS AT FIRST CALL
-    axios.get(SECRET_API_URL);
+    // axios.get(SECRET_API_URL);
 
     return {
       props: {
