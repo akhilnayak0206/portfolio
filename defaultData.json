@@ -177,7 +177,7 @@
       "title": "Dev Forum",
       "description": "This is a website for developers to share post, find other developers or ask questions from developers.",
       "codeUrl": "https://github.com/akhilnayak0206/devforum",
-      "websiteUrl": "https://dry-anchorage-65204.herokuapp.com/",
+      "websiteUrl": null,
       "showOnHomePage": true,
       "heroImage": {
         "id": 4,
