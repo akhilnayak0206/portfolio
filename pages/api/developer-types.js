@@ -28,7 +28,7 @@ export default async (req, res) => {
           published_at: '2022-04-16T09:38:15.912Z',
           created_at: '2022-04-16T09:38:14.431Z',
           updated_at: '2022-04-18T11:21:53.974Z',
-          numberOfProjects: '12+ PROJECTS',
+          numberOfProjects: '13+ PROJECTS',
           svgIcon: null,
         },
         {

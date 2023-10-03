@@ -27,7 +27,7 @@ export default async (req, res) => {
         myContactEmail: 'nayak@duck.com',
         linkedInUrl: 'https://in.linkedin.com/in/akhil-nayak',
         twitterUrl: 'https://twitter.com/n_akhil_000',
-        instagramUrl: 'https://www.instagram.com/akhilnayak_1',
+        instagramUrl: 'https://www.instagram.com/akhiln_1',
         stackoverflowUrl:
           'https://stackoverflow.com/users/11380693/akhil-nayak',
         githubUrl: 'https://github.com/akhilnayak0206',
