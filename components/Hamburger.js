@@ -34,47 +34,31 @@ function Hamburger({headerFooterData}) {
         >
           <ul className={styles.navigation__list}>
             <li className={styles.navigation__item}>
-              <Link href="/">
-                <a
-                  className={`${styles.navigation__link} ${
-                    router.pathname == "/" ? `${styles.link_active}` : ""
-                  }`}
-                >
-                  About
-                </a>
+              <Link href="/" className={`${styles.navigation__link} ${
+                router.pathname == "/" ? `${styles.link_active}` : ""
+              }`}>
+                About
               </Link>
             </li>
             <li className={styles.navigation__item}>
-              <Link href="/projects">
-                <a
-                  className={`${styles.navigation__link} ${
-                    router.pathname == "/projects" ? `${styles.link_active}` : ""
-                  }`}
-                >
-                  Projects
-                </a>
+              <Link href="/projects" className={`${styles.navigation__link} ${
+                router.pathname == "/projects" ? `${styles.link_active}` : ""
+              }`}>
+                Projects
               </Link>
             </li>
             <li className={styles.navigation__item}>
-              <Link href="/skills">
-                <a
-                  className={`${styles.navigation__link} ${
-                    router.pathname == "/skills" ? `${styles.link_active}` : ""
-                  }`}
-                >
-                  Skills
-                </a>
+              <Link href="/skills" className={`${styles.navigation__link} ${
+                router.pathname == "/skills" ? `${styles.link_active}` : ""
+              }`}>
+                Skills
               </Link>
             </li>
             <li className={styles.navigation__item}>
-              <Link href="/contact-me">
-                <a
-                  className={`${styles.navigation__link} ${
-                    router.pathname == "/contact-me" ? `${styles.link_active}` : ""
-                  }`}
-                >
-                  Contact Me
-                </a>
+              <Link href="/contact-me" className={`${styles.navigation__link} ${
+                router.pathname == "/contact-me" ? `${styles.link_active}` : ""
+              }`}>
+                Contact Me
               </Link>
             </li>
           </ul>

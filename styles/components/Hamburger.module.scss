@@ -138,7 +138,8 @@
       }
     }
 
-    a.link_active {
+    a.link_active,
+    [role="link"].link_active {
       width: 100%;
       display: inline-block;
       background-position: 100%;

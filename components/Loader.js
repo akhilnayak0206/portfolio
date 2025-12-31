@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from "@/styles/components/Loader.module.scss";
 import Image from 'next/image';
-import { imageConfigDefault } from 'next/dist/server/image-config';
 import LoaderIcon from "../public/loader-icon.svg";
 import { LoaderContext } from './Context';
 
@@ -15,7 +14,7 @@ function Loader(props) {
     <div className={`${styles.loader__mainDiv}`}>
       <div>
           <div>
-                <Image layout="fixed" src={LoaderIcon} alt="loader" />
+                <Image src={LoaderIcon} alt="loader" width={50} height={50} />
           </div>
       </div>
     </div>

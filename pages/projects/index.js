@@ -100,11 +100,9 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                             data?.heroImage?.formats?.small?.url ||
                             data.heroImage.url
                           }
-                          layout='fill'
+                          fill
                           alt={data.title}
-                          // width="100%"
-                          // height="100%"
-                          objectFit='contain'
+                          style={{ objectFit: 'contain' }}
                           className={styles.projectCardImage__Image}
                         />
                       </div>
@@ -122,35 +120,14 @@ export default function ProjectsPage({ headerFooterData, projects }) {
                       >
                         Open Screenshots
                       </div>
-                      {data.websiteUrl && (
-                        <a href={data.codeUrl} rel='noreferrer' target='_blank'>
-                          <div className={styles.projectCardButtons__vcButton}>
-                            View Code
-                          </div>
-                        </a>
-                      )}
                     </div>
-                    {data.websiteUrl ? (
-                      <div className={styles.projectCardButtons}>
-                        <a
-                          href={data.websiteUrl}
-                          rel='noreferrer'
-                          target='_blank'
-                        >
-                          <div className={styles.projectCardButtons__vcButton}>
-                            View Website
-                          </div>
-                        </a>
-                      </div>
-                    ) : (
-                      <div className={styles.projectCardButtons}>
-                        <a href={data.codeUrl} rel='noreferrer' target='_blank'>
-                          <div className={styles.projectCardButtons__vcButton}>
-                            View Code
-                          </div>
-                        </a>
-                      </div>
-                    )}
+                    <div className={styles.projectCardButtons}>
+                      <a href={data.codeUrl} rel='noreferrer' target='_blank'>
+                        <div className={styles.projectCardButtons__vcButton}>
+                          View Code
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 )
                 //  </Link>

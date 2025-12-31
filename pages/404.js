@@ -54,10 +54,10 @@ export default function NotFoundPage({ headerFooterData }) {
           <div className={`${styles.container} ${styles.notFoundDiv}`}>
             <div className={`${styles.errorImage}`}>
               <Image
-                layout='responsive'
                 src={error404}
-                objectPosition='top'
                 alt='404'
+                fill
+                style={{ objectPosition: 'top' }}
               />
             </div>
             <br />
@@ -67,9 +67,7 @@ export default function NotFoundPage({ headerFooterData }) {
             </h1>
             <br />
             <h2>
-              <Link href='/'>
-                <a>Go back to Home?</a>
-              </Link>
+              <Link href='/'>Go back to Home?</Link>
             </h2>
           </div>
         </main>

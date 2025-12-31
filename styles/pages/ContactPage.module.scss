@@ -128,6 +128,11 @@ $color-used-for-background: $color-background;
                 align-items: flex-start;
                 transition: all 1s;
 
+                @include respond (tab-port){
+                    padding: 20px 20px;
+                    margin-bottom: 15px;
+                }
+
                 &:hover{
                     box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
                     transform: translateY(-0.2rem);
@@ -140,11 +145,20 @@ $color-used-for-background: $color-background;
                     transition: all 1s;
                     padding: 1rem;
 
+                    @include respond (tab-port){
+                        padding: 0.5rem;
+                    }
+
                     &__logo{
                         margin-right: 2rem;
                         flex-basis: 20%;
                         display: flex;
                         justify-content: center;
+
+                        @include respond (tab-port){
+                            margin-right: 1rem;
+                            flex-basis: 25%;
+                        }
 
                     }
 
@@ -153,6 +167,11 @@ $color-used-for-background: $color-background;
                         text-decoration: none;
                         font-weight: 400;
                         flex-basis: 80%;
+
+                        @include respond (tab-port){
+                            font-size: medium;
+                            word-break: break-word;
+                        }
 
                     }
 

@@ -8,6 +8,25 @@ import {
   SECRET_API_CALLED,
 } from '../../config/index';
 
+// Function to calculate years of experience from June 2020 to current date
+const calculateYearsOfExperience = () => {
+  const startDate = new Date(2020, 5, 1); // June 2020 (month is 0-indexed)
+  const currentDate = new Date();
+  
+  const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - startDate.getMonth();
+  
+  // Adjust for partial years
+  let totalYears = yearsDiff;
+  if (monthsDiff < 0) {
+    totalYears--;
+  } else if (monthsDiff === 0 && currentDate.getDate() < startDate.getDate()) {
+    totalYears--;
+  }
+  
+  return Math.max(0, totalYears); // Ensure we don't get negative years
+};
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   try {
@@ -19,12 +38,14 @@ export default async (req, res) => {
 
     // let data = await axios.get(`${SECRET_API_URL}/home-page`, { headers });
     // sine heroku has stopped free dynos will have to move towards static data for temporary basis
+    const calculatedYearsOfExp = calculateYearsOfExperience();
+    
     let data = {
       data: {
         id: 1,
         developerType: 'Full Stack Developer',
         chatPopupText: "Let's Chat!",
-        yearsOfExp: 4,
+        yearsOfExp: calculatedYearsOfExp,
         projectCompleted: 16,
         section2IntroTitle: 'Introduction',
         section2IntroP1: "Hello! I'm Akhil Nayak",

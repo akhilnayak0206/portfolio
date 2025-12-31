@@ -49,45 +49,23 @@ function Footer({headerFooterData}) {
           <div className={styles.rightDiv}>
             <nav>
               <span>
-                <Link href="/">
-                  <a
-                    className={router.pathname == "/" ? `${styles.active}` : ""}
-                  >
-                    About
-                  </a>
+                <Link href="/" className={router.pathname == "/" ? `${styles.active}` : ""}>
+                  About
                 </Link>
               </span>
               <span>
-                <Link href="/projects">
-                  <a
-                    className={
-                      router.pathname == "/projects" ? `${styles.active}` : ""
-                    }
-                  >
-                    Projects
-                  </a>
+                <Link href="/projects" className={router.pathname == "/projects" ? `${styles.active}` : ""}>
+                  Projects
                 </Link>
               </span>
               <span>
-                <Link href="/skills">
-                  <a
-                    className={
-                      router.pathname == "/skills" ? `${styles.active}` : ""
-                    }
-                  >
-                    Skills
-                  </a>
+                <Link href="/skills" className={router.pathname == "/skills" ? `${styles.active}` : ""}>
+                  Skills
                 </Link>
               </span>
               <span>
-                <Link href="/contact-me">
-                  <a
-                    className={
-                      router.pathname == "/contact-me" ? `${styles.active}` : ""
-                    }
-                  >
-                    Contact Me
-                  </a>
+                <Link href="/contact-me" className={router.pathname == "/contact-me" ? `${styles.active}` : ""}>
+                  Contact Me
                 </Link>
               </span>
             </nav>
@@ -97,10 +75,8 @@ function Footer({headerFooterData}) {
           <div className={styles.leftDiv}>
             <div className={`${styles.logo} ${styles.logoFooter}`}>
               <span className={styles.flexBaseline}>
-                <Link href="/">
-                  <a>
-                    <span>Akhil</span> Nayak
-                  </a>
+                <Link href="/" className={router.pathname == "/" ? `${styles.active}` : ""}>
+                  <span>Akhil</span> Nayak
                 </Link>
                 <span className={styles.rightsReserved}>
                   &copy;{date}. All Rights Reserved{" "}
