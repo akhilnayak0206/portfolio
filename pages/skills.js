@@ -83,7 +83,6 @@ export default function SkillsPage({ headerFooterData, skills }) {
                     </span>
                   </div>
                   <Image
-                    layout='intrinsic'
                     width={100}
                     height={100}
                     src={
@@ -92,7 +91,7 @@ export default function SkillsPage({ headerFooterData, skills }) {
                     // src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425"
                     // className={`${styles.skillLogo}`}
                     alt={skill.title}
-                    objectFit='contain'
+                    style={{ objectFit: 'contain' }}
                   />
                   <span className={styles.skillTitle}>{skill.title}</span>
                 </div>

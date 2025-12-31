@@ -154,11 +154,11 @@ export default function HomePage({
                 <div className={styles.system_sun}>
                   <div className={styles.system_earth}>
                     <Image
-                      layout='fill'
                       src={javaScriptLogo}
                       // src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425"
                       className={`${styles.earth}`}
                       alt='javaScriptLogo'
+                      fill
                     />
                   </div>
                   <div className={styles.system_saturn}>
@@ -176,9 +176,8 @@ export default function HomePage({
                       src={section1Image?.url || myPic}
                       priority
                       alt='akhil nayak'
-                      layout='fill'
-                      objectFit='contain'
-                      objectPosition='center'
+                      fill
+                      style={{ objectFit: 'contain', objectPosition: 'center' }}
                     />
                   </div>
                 </div>
@@ -196,10 +195,11 @@ export default function HomePage({
                       <span className={styles.card__first_line}>
                         <h1>{value?.title}</h1>
                         <Image
-                          layout='fixed'
                           src={imgCodeIcon}
                           className={styles.svgIcon}
                           alt='code'
+                          width={20}
+                          height={20}
                         />
                         {/* <object className={styles.svgIcon} data={imgCodeIcon.src} type="image/svg+xml" /> */}
                       </span>
@@ -244,11 +244,10 @@ export default function HomePage({
                       // src="https://res.cloudinary.com/dx0wpoeyu/image/upload/v1580740705/Alzheimer%20App/screenshots/1loginPage.jpg"
                       // src="https://res.cloudinary.com/dx0wpoeyu/image/upload/v1580730539/Dev%20Forum/web/homePageWeb.png"
                       src={data?.heroImage?.formats?.small?.url || data?.url}
-                      layout='fixed'
                       alt={data?.heroImage?.name || 'projects'}
-                      width='350px'
-                      height='200px'
-                      objectFit='contain'
+                      width={350}
+                      height={200}
+                      style={{ objectFit: 'contain' }}
                     />
                     {/* </Link> */}
                   </div>

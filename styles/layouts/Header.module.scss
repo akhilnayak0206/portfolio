@@ -9,15 +9,17 @@
   background-color: $color-background;
   z-index: 1000;
 
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &.headerScrolled {
     transform: translateY(-20px);
     transition: 0.05s ease-in;
     background-color: $color-background-dark;
     /* border-bottom: 1px solid #eaeaea; */
-  }
-
-  a {
-    text-decoration: none;
   }
 
   a,
@@ -27,63 +29,90 @@
     color: inherit;
   }
 
-  a.active::before {
+  /* Link component styles */
+  a,
+  [role="link"] {
+    text-decoration: none;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active,
+  [role="link"],
+  [role="link"]:visited,
+  [role="link"]:hover,
+  [role="link"]:active {
+    color: inherit;
+  }
+
+  a.active::before,
+  [role="link"].active::before {
     content: "<  ";
   }
 
-  a.active {
+  a.active,
+  [role="link"].active {
     color: $color-primary;
   }
 
-  a.active::after {
+  a.active::after,
+  [role="link"].active::after {
     content: "  >";
   }
 
   nav.navigationDiv {
-    width: 45%;
+    width: auto;
     display: flex;
-    margin-right: 10px;
+    margin-right: 20px;
+    align-items: center;
 
     span {
-      margin-right: 50px;
+      margin-right: 25px;
+    }
+    
+    span:last-child {
+      margin-right: 0;
     }
   }
 
   nav.contactDiv {
     display: flex;
-    justify-content: space-between;
-    width: 30%;
+    justify-content: flex-end;
+    width: auto;
+    align-items: center;
 
     span {
-      width: 100%;
+      width: auto;
+      margin-left: 15px;
       a {
         color: $color-grey-dark-2;
-        width: 100%;
+        width: auto;
         display: flex;
-        align-items: baseline;
-        justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        gap: 5px;
+        font-size: 0.9rem;
+        white-space: nowrap;
       }
       img {
         width: 1rem !important;
         min-width: 1rem !important;
       }
     }
-    span:last-child {
-      text-align: right;
-      width: 100%;
-      a {
-        justify-content: flex-end;
-      }
-    }
     span:first-child {
+      margin-left: 0;
       a {
-        justify-content: space-between;
-        max-width: 85px;
+        justify-content: flex-start;
+        max-width: 80px;
       }
     }
     span:nth-child(2) {
-      max-width: 95px;
+      max-width: 75px;
+    }
+    span:nth-child(3) {
+      max-width: 60px;
     }
   }
 

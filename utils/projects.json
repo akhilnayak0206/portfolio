@@ -25032,6 +25032,177 @@
           "updated_at": "2023-10-01T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "id": 18,
+      "title": "Power Tracker",
+      "description": "A power consumption tracking application that helps users monitor and analyze their electricity usage patterns.",
+      "codeUrl": "https://github.com/akhilnayak0206/power-tracker",
+      "websiteUrl": null,
+      "showOnHomePage": true,
+      "published_at": "2025-12-31T18:00:00.009Z",
+      "created_at": "2025-12-31T18:00:00.000Z",
+      "updated_at": "2025-12-31T18:00:00.000Z",
+      "position": 1,
+      "positionOnHomePage": 1,
+      "heroImage": {
+        "id": 20,
+        "name": "power-tracker-ss.png",
+        "alternativeText": "Power Tracker Screenshot",
+        "caption": "Power Tracker Application Interface",
+        "width": 1366,
+        "height": 617,
+        "formats": {
+          "large": {
+            "ext": ".png",
+            "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+            "hash": "large_power_tracker_ss",
+            "mime": "image/png",
+            "name": "large_power-tracker-ss.png",
+            "path": null,
+            "size": 528.75,
+            "width": 1000,
+            "height": 452,
+            "provider_metadata": {
+              "public_id": "large_power_tracker_ss",
+              "resource_type": "image"
+            }
+          },
+          "small": {
+            "ext": ".png",
+            "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+            "hash": "small_power_tracker_ss",
+            "mime": "image/png",
+            "name": "small_power-tracker-ss.png",
+            "path": null,
+            "size": 147.34,
+            "width": 500,
+            "height": 226,
+            "provider_metadata": {
+              "public_id": "small_power_tracker_ss",
+              "resource_type": "image"
+            }
+          },
+          "medium": {
+            "ext": ".png",
+            "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+            "hash": "medium_power_tracker_ss",
+            "mime": "image/png",
+            "name": "medium_power-tracker-ss.png",
+            "path": null,
+            "size": 309.1,
+            "width": 750,
+            "height": 339,
+            "provider_metadata": {
+              "public_id": "medium_power_tracker_ss",
+              "resource_type": "image"
+            }
+          },
+          "thumbnail": {
+            "ext": ".png",
+            "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+            "hash": "thumbnail_power_tracker_ss",
+            "mime": "image/png",
+            "name": "thumbnail_power-tracker-ss.png",
+            "path": null,
+            "size": 41.5,
+            "width": 245,
+            "height": 111,
+            "provider_metadata": {
+              "public_id": "thumbnail_power_tracker_ss",
+              "resource_type": "image"
+            }
+          }
+        },
+        "hash": "power_tracker_ss",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 766.96,
+        "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+        "previewUrl": null,
+        "provider": "github",
+        "provider_metadata": {
+          "public_id": "power_tracker_ss",
+          "resource_type": "image"
+        },
+        "created_at": "2025-12-31T18:00:00.000Z",
+        "updated_at": "2025-12-31T18:00:00.000Z"
+      },
+      "screenshots": [
+        {
+          "id": 20,
+          "name": "power-tracker-ss.png",
+          "alternativeText": "Power Tracker Screenshot",
+          "caption": "Power Tracker Application Interface",
+          "width": 1366,
+          "height": 617,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+              "hash": "large_power_tracker_ss",
+              "mime": "image/png",
+              "name": "large_power-tracker-ss.png",
+              "path": null,
+              "size": 528.75,
+              "width": 1000,
+              "height": 452,
+              "provider_metadata": {
+                "public_id": "large_power_tracker_ss",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".png",
+              "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+              "hash": "small_power_tracker_ss",
+              "mime": "image/png",
+              "name": "small_power-tracker-ss.png",
+              "path": null,
+              "size": 147.34,
+              "width": 500,
+              "height": 226,
+              "provider_metadata": {
+                "public_id": "small_power_tracker_ss",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+              "hash": "medium_power_tracker_ss",
+              "mime": "image/png",
+              "name": "medium_power-tracker-ss.png",
+              "path": null,
+              "size": 309.1,
+              "width": 750,
+              "height": 339,
+              "provider_metadata": {
+                "public_id": "medium_power_tracker_ss",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+              "hash": "thumbnail_power_tracker_ss",
+              "mime": "image/png",
+              "name": "thumbnail_power-tracker-ss.png",
+              "path": null,
+              "size": 41.5,
+              "width": 245,
+              "height": 111,
+              "provider_metadata": {
+                "public_id": "thumbnail_power_tracker_ss",
+                "resource_type": "image"
+              }
+            }
+          },
+          "url": "https://raw.githubusercontent.com/akhilnayak0206/power-tracker/refs/heads/main/ss.png",
+          "created_at": "2025-12-31T18:00:00.000Z",
+          "updated_at": "2025-12-31T18:00:00.000Z"
+        }
+      ]
     }
   ]
 }

@@ -142,10 +142,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={LinkedInIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a
@@ -160,10 +161,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={TwitterIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a
@@ -178,10 +180,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={InstagramIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a
@@ -196,10 +199,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={StackOverflowIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a
@@ -214,10 +218,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={GithubIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a
@@ -232,10 +237,11 @@ export default function ContactMePage({ headerFooterData, contactPageData }) {
                   <div className={styles.cardContactMe__cardContent}>
                     <span className={styles.cardContactMe__cardContent__logo}>
                       <Image
-                        layout='fixed'
                         src={emailIcon}
                         alt='linkedin'
                         className={styles.contactCardSvgIcon}
+                        width={24}
+                        height={24}
                       />
                     </span>
                     <a

@@ -125,11 +125,13 @@
           margin-right: 10px;
           flex-direction: column;
 
-          a.active::before {
+          a.active::before,
+          [role="link"].active::before {
             content: "<  ";
           }
 
-          a.active {
+          a.active,
+          [role="link"].active {
             color: $color-primary;
             margin-left: -15px;
 
@@ -138,7 +140,8 @@
             }
           }
 
-          a.active::after {
+          a.active::after,
+          [role="link"].active::after {
             content: "  >";
           }
 
